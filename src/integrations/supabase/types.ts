@@ -14,7 +14,72 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      contact_messages: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          subject: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          subject: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          subject?: string
+        }
+        Relationships: []
+      }
+      delegate_applications: {
+        Row: {
+          age: number
+          committee_preference: string
+          country: string
+          created_at: string
+          email: string
+          experience: string
+          full_name: string
+          id: string
+          motivation: string
+          school: string
+        }
+        Insert: {
+          age: number
+          committee_preference: string
+          country: string
+          created_at?: string
+          email: string
+          experience: string
+          full_name: string
+          id?: string
+          motivation: string
+          school: string
+        }
+        Update: {
+          age?: number
+          committee_preference?: string
+          country?: string
+          created_at?: string
+          email?: string
+          experience?: string
+          full_name?: string
+          id?: string
+          motivation?: string
+          school?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
