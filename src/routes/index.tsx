@@ -62,10 +62,10 @@ function Home() {
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              to="/about"
+              to="/committees"
               className="inline-flex items-center gap-2 rounded-sm border border-mges-gold/40 px-6 py-3.5 text-sm font-medium text-mges-beige hover:bg-mges-gold/10 transition-colors"
             >
-              What is MGES?
+              Explore committees
             </Link>
           </div>
 
