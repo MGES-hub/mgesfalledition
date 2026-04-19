@@ -5,7 +5,6 @@ import { MgesLogo } from "@/components/mges-logo";
 
 const links = [
   { to: "/", label: "Home", icon: "🏛️" },
-  { to: "/about", label: "About", icon: "📜" },
   { to: "/committees", label: "Committees", icon: "🌍" },
   { to: "/schedule", label: "Schedule", icon: "🗓️" },
   { to: "/delegates", label: "Delegates", icon: "🎓" },

@@ -1,132 +1,223 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { PageHeader } from "@/components/page-header";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
+import fomcLogo from "@/assets/committees/fomc.png";
+import bricsLogo from "@/assets/committees/brics.png";
+import wtoLogo from "@/assets/committees/wto.png";
+import hesocLogo from "@/assets/committees/hesoc.png";
 
 export const Route = createFileRoute("/committees")({
   head: () => ({
     meta: [
       { title: "Committees — MGES 2026" },
-      { name: "description", content: "Six specialised economic committees: IMF, WTO, OECD, G20, UNCTAD, ECOFIN. Choose your seat." },
+      { name: "description", content: "Four specialised economic committees: FOMC, BRICS, WTO, and HESOC. Choose your seat." },
       { property: "og:title", content: "MGES 2026 Committees" },
-      { property: "og:description", content: "Six committees covering global economic policy: IMF, WTO, OECD, G20, UNCTAD, ECOFIN." },
+      { property: "og:description", content: "Four committees covering global economic policy: FOMC, BRICS, WTO, HESOC." },
     ],
   }),
   component: CommitteesPage,
 });
 
-const committees = [
+type Committee = {
+  code: string;
+  name: string;
+  logo: string;
+  difficulty: "Beginner" | "Intermediate" | "Advanced" | "Expert";
+  size: number;
+  chairs?: string;
+  description: string;
+  members: string[];
+};
+
+const committees: Committee[] = [
   {
-    code: "IMF",
-    name: "International Monetary Fund",
-    level: "Advanced",
-    seats: 36,
-    topic: "Sovereign debt restructuring in an era of higher-for-longer rates",
-    summary:
-      "Delegates negotiate frameworks for the orderly restructuring of distressed sovereigns, balancing creditor recovery, growth recovery, and political feasibility.",
+    code: "FOMC",
+    name: "Federal Open Market Committee",
+    logo: fomcLogo,
+    difficulty: "Expert",
+    size: 12,
+    chairs: "Samuel Vojtech Remenár & Adrian Bednár",
+    description:
+      "Delegates will dive into a 'what if' scenario where Zohran K. Mamdani becomes the new President of the USA, while Elon Musk holds the absolute majority in both the Senate and the House of Representatives. Central bankers must find a consensus between the President and the Technocratic Party.",
+    members: [
+      "Amir Yaron", "Anna Paulson", "Elon Musk", "Javier Milei", "John C. Williams",
+      "Kevin Maxwell Warsh", "Lisa D. Cook", "Michelle W. Bowman", "Neel Kashkari",
+      "Pablo Hernández de Cos", "U.S. Department of the Treasury", "Zohran Kwame Mamdani",
+    ],
+  },
+  {
+    code: "BRICS",
+    name: "BRICS",
+    logo: bricsLogo,
+    difficulty: "Intermediate",
+    size: 14,
+    chairs: "Martin Kníž & Filip Truhlář",
+    description:
+      "The coalition of major emerging economies will explore reshaping global monetary policy by reducing dependence on the US Dollar. Delegates will debate a common BRICS currency, national currency trade, the expansion of the New Development Bank, and the geopolitical influence of the Federal Reserve.",
+    members: [
+      "Brazil", "China", "Egypt", "Ethiopia", "Federal Reserve System", "India",
+      "Indonesia", "International Monetary Fund", "Iran", "New Development Bank",
+      "Russian Federation", "South Africa", "United Arab Emirates", "United States",
+    ],
   },
   {
     code: "WTO",
     name: "World Trade Organization",
-    level: "Intermediate",
-    seats: 32,
-    topic: "Industrial policy, subsidies, and the future of the rules-based trading system",
-    summary:
-      "From CHIPS to CBAM, delegates confront a wave of unilateral industrial policy and ask what a credible multilateral response looks like.",
+    logo: wtoLogo,
+    difficulty: "Beginner",
+    size: 16,
+    description:
+      "Delegates will examine the framework of Special and Differential Treatment (SDT) and its role in supporting developing economies. The committee will debate how SDT provisions can be reformed to ensure fairness and accountability while balancing free trade principles.",
+    members: [
+      "Argentina", "Australia", "Bangladesh", "Brazil", "Canada", "China", "Ethiopia",
+      "European Union", "India", "Japan", "Mexico", "Nigeria", "United Kingdom",
+      "United States", "Venezuela", "Viet Nam",
+    ],
   },
   {
-    code: "OECD",
-    name: "Org. for Economic Co-operation and Development",
-    level: "Intermediate",
-    seats: 28,
-    topic: "Pillar Two and the global minimum tax — implementation and exceptions",
-    summary:
-      "Delegates negotiate the next steps of the global minimum corporate tax, addressing carve-outs, dispute resolution, and developing-country concerns.",
-  },
-  {
-    code: "G20",
-    name: "G20 Finance Ministers & Central Bank Governors",
-    level: "Advanced",
-    seats: 24,
-    topic: "Coordinating monetary and fiscal policy in a fragmented global economy",
-    summary:
-      "A high-level cabinet committee. Real-time crisis simulation. Joint communiqués drafted line by line.",
-  },
-  {
-    code: "UNCTAD",
-    name: "UN Conference on Trade and Development",
-    level: "Beginner",
-    seats: 32,
-    topic: "Financing the green transition in the Global South",
-    summary:
-      "Delegates draft proposals on concessional finance, technology transfer, and trade-led climate adaptation. The committee best suited to first-time delegates.",
-  },
-  {
-    code: "ECOFIN",
-    name: "EU Economic and Financial Affairs Council",
-    level: "Intermediate",
-    seats: 28,
-    topic: "The Capital Markets Union — completing Europe's single market for finance",
-    summary:
-      "EU member states debate harmonising capital markets, with implications for euro-area savings, investment, and strategic autonomy.",
+    code: "HESOC",
+    name: "Historical Economic and Social Council",
+    logo: hesocLogo,
+    difficulty: "Beginner",
+    size: 17,
+    chairs: "Vladimír Brdečka & Olívia Jánošíková",
+    description:
+      "Set in 1992, delegates take the roles of historical global leaders. As Soviet influence declines, a new superpower seeks to counterbalance the USA. The committee will design institutions and trade systems to reflect this shifting Post-Cold War power balance.",
+    members: [
+      "Boris Yeltsin (Russia)", "Fernando Collor de Mello (Brazil)", "Fidel Castro (Cuba)",
+      "François Mitterrand (France)", "George H. W. Bush (USA)", "Helmut Kohl (Germany)",
+      "Jiang Zemin (China)", "John Major (UK)", "John Paul II (Holy See)",
+      "Kiichi Miyazawa (Japan)", "Kim Il Sung (DPRK)", "King Fahd bin Abdulaziz Al Saud (Saudi Arabia)",
+      "Lech Wałęsa (Poland)", "Nelson Mandela (South Africa)", "Roh Tae-woo (South Korea)",
+      "Saddam Hussein (Iraq)", "Václav Havel (Czechoslovakia)",
+    ],
   },
 ];
 
+const difficultyColor: Record<Committee["difficulty"], string> = {
+  Beginner: "text-emerald-300",
+  Intermediate: "text-mges-gold",
+  Advanced: "text-orange-300",
+  Expert: "text-red-300",
+};
+
 function CommitteesPage() {
+  const [openCode, setOpenCode] = useState<string | null>(null);
+  const open = committees.find((c) => c.code === openCode) ?? null;
+
   return (
-    <>
+    <div className="bg-mges-navy">
       <PageHeader
-        eyebrow="Committees"
-        title="Six rooms. Six economic mandates. One global conversation."
-        intro="Each committee runs across all three days. Topics are released six weeks before the conference together with detailed background guides."
+        eyebrow="The Floor"
+        title="Four committees. One global conversation."
+        intro="Each committee runs across all three days of the summit. Background guides are released to confirmed delegates six weeks before the conference."
       />
 
-      <section className="container-prose py-20">
-        <div className="grid md:grid-cols-2 gap-px bg-border">
+      <section className="container-prose pb-24">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {committees.map((c) => (
             <article
               key={c.code}
-              className="bg-background p-8 md:p-10 group flex flex-col"
+              className="flex flex-col rounded-sm border border-mges-gold/20 p-8 md:p-10"
+              style={{ backgroundColor: "#1F3848" }}
             >
-              <div className="flex items-baseline justify-between gap-4">
-                <div className="font-display text-5xl md:text-6xl font-medium tracking-tight text-foreground">
-                  {c.code}
-                </div>
-                <div className="text-right">
-                  <div className="text-xs font-mono uppercase tracking-[0.15em] text-emerald-accent">
-                    {c.level}
+              <div className="flex items-start gap-5">
+                <img
+                  src={c.logo}
+                  alt={`${c.name} logo`}
+                  width={96}
+                  height={96}
+                  loading="lazy"
+                  className="h-20 w-20 md:h-24 md:w-24 object-contain shrink-0"
+                />
+                <div className="min-w-0 flex-1">
+                  <div className="font-display text-3xl md:text-4xl font-bold leading-tight text-mges-gold">
+                    {c.code}
                   </div>
-                  <div className="text-xs font-mono text-muted-foreground mt-1">
-                    {c.seats} seats
-                  </div>
+                  <div className="mt-1 text-sm text-mges-beige/80">{c.name}</div>
                 </div>
               </div>
-              <div className="mt-3 text-sm text-muted-foreground">{c.name}</div>
-              <div className="mt-8 pt-6 border-t border-border">
-                <div className="eyebrow">Topic</div>
-                <h3 className="mt-2 font-display text-xl font-medium leading-snug text-balance">
-                  {c.topic}
-                </h3>
-                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{c.summary}</p>
+
+              <p className="mt-6 text-mges-beige/85 leading-relaxed">
+                {c.description}
+              </p>
+
+              <dl className="mt-6 grid grid-cols-2 gap-x-4 gap-y-2 text-sm border-t border-mges-gold/15 pt-5">
+                <dt className="font-mono uppercase text-[10px] tracking-[0.18em] text-mges-beige/55">Difficulty</dt>
+                <dt className="font-mono uppercase text-[10px] tracking-[0.18em] text-mges-beige/55">Size</dt>
+                <dd className={`font-display text-base ${difficultyColor[c.difficulty]}`}>{c.difficulty}</dd>
+                <dd className="font-display text-base text-mges-beige">{c.size} spots</dd>
+                {c.chairs && (
+                  <>
+                    <dt className="col-span-2 mt-2 font-mono uppercase text-[10px] tracking-[0.18em] text-mges-beige/55">Chairs</dt>
+                    <dd className="col-span-2 text-mges-beige">{c.chairs}</dd>
+                  </>
+                )}
+              </dl>
+
+              <div className="mt-7 flex flex-wrap gap-3">
+                <button
+                  type="button"
+                  onClick={() => setOpenCode(c.code)}
+                  className="inline-flex items-center gap-2 rounded-sm bg-mges-royal px-5 py-2.5 text-sm font-medium text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
+                >
+                  View Members
+                </button>
+                <Link
+                  to="/apply"
+                  className="inline-flex items-center gap-2 rounded-sm border border-mges-gold/40 px-5 py-2.5 text-sm font-medium text-mges-beige hover:bg-mges-gold/10 transition-colors"
+                >
+                  Apply for seat <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
             </article>
           ))}
         </div>
-
-        <div className="mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-8 bg-ink text-bone rounded-sm">
-          <div>
-            <div className="eyebrow text-emerald-glow">Background guides</div>
-            <h3 className="mt-2 font-display text-2xl">
-              Released to confirmed delegates · January 10, 2026
-            </h3>
-          </div>
-          <Link
-            to="/apply"
-            className="inline-flex items-center gap-2 rounded-sm bg-emerald-accent px-6 py-3.5 text-sm font-medium text-ink hover:bg-emerald-glow transition-colors whitespace-nowrap"
-          >
-            Apply now <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
       </section>
-    </>
+
+      {/* Members modal */}
+      {open && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-mges-navy/85 backdrop-blur-sm"
+          onClick={() => setOpenCode(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="members-title"
+        >
+          <div
+            className="relative max-w-2xl w-full max-h-[85vh] overflow-y-auto rounded-sm border border-mges-gold/30 p-8 md:p-10"
+            style={{ backgroundColor: "#1F3848" }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setOpenCode(null)}
+              aria-label="Close"
+              className="absolute top-4 right-4 p-2 text-mges-beige/70 hover:text-mges-gold transition-colors"
+            >
+              <X className="h-5 w-5" />
+            </button>
+            <div className="flex items-center gap-4">
+              <img src={open.logo} alt="" className="h-14 w-14 object-contain" />
+              <div>
+                <div className="eyebrow">Members</div>
+                <h2 id="members-title" className="font-display text-2xl md:text-3xl font-bold text-mges-gold leading-tight">
+                  {open.code} — {open.name}
+                </h2>
+              </div>
+            </div>
+            <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 text-mges-beige">
+              {open.members.map((m) => (
+                <li key={m} className="flex gap-2 leading-snug">
+                  <span className="text-mges-gold/60">·</span>
+                  <span>{m}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }

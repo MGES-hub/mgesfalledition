@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-bg.jpg";
 import bratislavaImg from "@/assets/bratislava-aerial.jpg";
 import bricsLogo from "@/assets/committees/brics.png";
-import ecosocLogo from "@/assets/committees/ecosoc.png";
+import hesocLogo from "@/assets/committees/hesoc.png";
 import fomcLogo from "@/assets/committees/fomc.png";
 import wtoLogo from "@/assets/committees/wto.png";
 import { Countdown } from "@/components/countdown";
@@ -23,10 +23,10 @@ export const Route = createFileRoute("/")({
 });
 
 const committees = [
-  { code: "BRICS", name: "BRICS Summit", logo: bricsLogo },
-  { code: "ECOSOC", name: "UN ECOSOC", logo: ecosocLogo },
   { code: "FOMC", name: "Federal Open Market Committee", logo: fomcLogo },
+  { code: "BRICS", name: "BRICS", logo: bricsLogo },
   { code: "WTO", name: "World Trade Organization", logo: wtoLogo },
+  { code: "HESOC", name: "Historical Economic & Social Council", logo: hesocLogo },
 ];
 
 function Home() {
