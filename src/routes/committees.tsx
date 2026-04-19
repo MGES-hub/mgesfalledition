@@ -120,7 +120,7 @@ function CommitteesPage() {
             <article
               key={c.code}
               className="flex flex-col rounded-sm border border-mges-gold/20 p-8 md:p-10"
-              style={{ backgroundColor: "#1F3848" }}
+              style={{ backgroundColor: "#051626" }}
             >
               <div className="flex items-start gap-5">
                 <img
@@ -187,7 +187,7 @@ function CommitteesPage() {
         >
           <div
             className="relative max-w-2xl w-full max-h-[85vh] overflow-y-auto rounded-sm border border-mges-gold/30 p-8 md:p-10"
-            style={{ backgroundColor: "#1F3848" }}
+            style={{ backgroundColor: "#051626" }}
             onClick={(e) => e.stopPropagation()}
           >
             <button
