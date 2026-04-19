@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", "Rotation LT Std", ui-serif, Georgia, serif;
+  --font-sans: "Cormorant Garamond", "Lora", ui-serif, Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --radius-sm: calc(var(--radius) - 4px);
@@ -33,81 +33,97 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-graphite: var(--graphite);
-  --color-emerald-accent: var(--emerald-accent);
-  --color-emerald-glow: var(--emerald-glow);
-  --color-bone: var(--bone);
-  --color-ink: var(--ink);
+
+  /* MGES brand tokens */
+  --color-mges-navy: var(--mges-navy);
+  --color-mges-charcoal: var(--mges-charcoal);
+  --color-mges-steel: var(--mges-steel);
+  --color-mges-royal: var(--mges-royal);
+  --color-mges-gold: var(--mges-gold);
+  --color-mges-beige: var(--mges-beige);
+
+  /* Legacy aliases (keep existing class names working) */
+  --color-graphite: var(--mges-charcoal);
+  --color-emerald-accent: var(--mges-gold);
+  --color-emerald-glow: var(--mges-gold);
+  --color-bone: var(--mges-beige);
+  --color-ink: var(--mges-navy);
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap");
 
 :root {
-  --radius: 0.5rem;
+  --radius: 0.375rem;
 
-  /* Brand */
-  --graphite: oklch(0.21 0.012 250);          /* deep charcoal */
-  --ink: oklch(0.14 0.014 250);               /* near-black */
-  --bone: oklch(0.97 0.006 90);               /* warm off-white */
-  --emerald-accent: oklch(0.62 0.14 162);     /* signal emerald */
-  --emerald-glow: oklch(0.78 0.16 160);
+  /* MGES brand palette — exact hex */
+  --mges-navy: #051626;        /* primary background */
+  --mges-charcoal: #1E1E1E;    /* dark alt sections / footer */
+  --mges-steel: #1F3848;       /* structural / cards / separators */
+  --mges-royal: #16265A;       /* buttons / interactive */
+  --mges-gold: #C69E56;        /* headings, highlights */
+  --mges-beige: #E0D5BD;       /* body text, UI labels */
 
-  --background: var(--bone);
-  --foreground: var(--ink);
-  --card: oklch(1 0 0);
-  --card-foreground: var(--ink);
-  --popover: oklch(1 0 0);
-  --popover-foreground: var(--ink);
-  --primary: var(--ink);
-  --primary-foreground: var(--bone);
-  --secondary: oklch(0.93 0.008 90);
-  --secondary-foreground: var(--ink);
-  --muted: oklch(0.93 0.008 90);
-  --muted-foreground: oklch(0.45 0.012 250);
-  --accent: var(--emerald-accent);
-  --accent-foreground: oklch(1 0 0);
+  --background: var(--mges-navy);
+  --foreground: var(--mges-beige);
+  --card: var(--mges-steel);
+  --card-foreground: var(--mges-beige);
+  --popover: var(--mges-steel);
+  --popover-foreground: var(--mges-beige);
+  --primary: var(--mges-royal);
+  --primary-foreground: var(--mges-beige);
+  --secondary: var(--mges-steel);
+  --secondary-foreground: var(--mges-beige);
+  --muted: var(--mges-steel);
+  --muted-foreground: color-mix(in oklab, var(--mges-beige) 65%, transparent);
+  --accent: var(--mges-gold);
+  --accent-foreground: var(--mges-navy);
   --destructive: oklch(0.55 0.22 27);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.88 0.008 90);
-  --input: oklch(0.9 0.008 90);
-  --ring: var(--emerald-accent);
+  --destructive-foreground: #ffffff;
+  --border: color-mix(in oklab, var(--mges-gold) 22%, transparent);
+  --input: color-mix(in oklab, var(--mges-beige) 18%, transparent);
+  --ring: var(--mges-gold);
 }
 
 .dark {
-  --background: var(--ink);
-  --foreground: var(--bone);
-  --card: var(--graphite);
-  --card-foreground: var(--bone);
-  --popover: var(--graphite);
-  --popover-foreground: var(--bone);
-  --primary: var(--bone);
-  --primary-foreground: var(--ink);
-  --secondary: oklch(0.25 0.012 250);
-  --secondary-foreground: var(--bone);
-  --muted: oklch(0.25 0.012 250);
-  --muted-foreground: oklch(0.65 0.012 250);
-  --accent: var(--emerald-accent);
-  --accent-foreground: var(--ink);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: var(--emerald-glow);
+  --background: var(--mges-navy);
+  --foreground: var(--mges-beige);
+  --card: var(--mges-steel);
+  --card-foreground: var(--mges-beige);
+  --popover: var(--mges-steel);
+  --popover-foreground: var(--mges-beige);
+  --primary: var(--mges-royal);
+  --primary-foreground: var(--mges-beige);
+  --secondary: var(--mges-steel);
+  --secondary-foreground: var(--mges-beige);
+  --muted: var(--mges-steel);
+  --muted-foreground: color-mix(in oklab, var(--mges-beige) 65%, transparent);
+  --accent: var(--mges-gold);
+  --accent-foreground: var(--mges-navy);
+  --border: color-mix(in oklab, var(--mges-gold) 22%, transparent);
+  --input: color-mix(in oklab, var(--mges-beige) 18%, transparent);
+  --ring: var(--mges-gold);
 }
 
 @layer base {
   * { border-color: var(--color-border); }
   html { scroll-behavior: smooth; }
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--mges-navy);
+    color: var(--mges-beige);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
+    font-size: 1.0625rem;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
-    font-weight: 500;
+    color: var(--mges-gold);
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    line-height: 1.1;
   }
+  a { color: inherit; }
+  ::selection { background: var(--mges-gold); color: var(--mges-navy); }
 }
 
 @layer utilities {
@@ -123,18 +139,24 @@
     font-family: var(--font-mono);
     font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: var(--emerald-accent);
+    letter-spacing: 0.22em;
+    color: var(--mges-gold);
   }
   .grid-lines {
     background-image:
-      linear-gradient(to right, color-mix(in oklab, var(--foreground) 6%, transparent) 1px, transparent 1px),
-      linear-gradient(to bottom, color-mix(in oklab, var(--foreground) 6%, transparent) 1px, transparent 1px);
+      linear-gradient(to right, color-mix(in oklab, var(--mges-gold) 8%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, var(--mges-gold) 8%, transparent) 1px, transparent 1px);
     background-size: 64px 64px;
   }
   .text-balance { text-wrap: balance; }
   .ticker-divider {
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--border), transparent);
+    background: linear-gradient(to right, transparent, var(--mges-gold), transparent);
+    opacity: 0.4;
+  }
+  .gold-rule {
+    height: 1px;
+    background: var(--mges-gold);
+    opacity: 0.5;
   }
 }
