@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-bg.jpg";
 import bratislavaImg from "@/assets/bratislava-aerial.jpg";
 import bricsLogo from "@/assets/committees/brics.png";
-import ecosocLogo from "@/assets/committees/ecosoc.png";
+import hesocLogo from "@/assets/committees/hesoc.png";
 import fomcLogo from "@/assets/committees/fomc.png";
 import wtoLogo from "@/assets/committees/wto.png";
 import { Countdown } from "@/components/countdown";
@@ -23,10 +23,10 @@ export const Route = createFileRoute("/")({
 });
 
 const committees = [
-  { code: "BRICS", name: "BRICS Summit", logo: bricsLogo },
-  { code: "ECOSOC", name: "UN ECOSOC", logo: ecosocLogo },
   { code: "FOMC", name: "Federal Open Market Committee", logo: fomcLogo },
+  { code: "BRICS", name: "BRICS", logo: bricsLogo },
   { code: "WTO", name: "World Trade Organization", logo: wtoLogo },
+  { code: "HESOC", name: "Historical Economic & Social Council", logo: hesocLogo },
 ];
 
 function Home() {
@@ -62,10 +62,10 @@ function Home() {
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
-              to="/about"
+              to="/committees"
               className="inline-flex items-center gap-2 rounded-sm border border-mges-gold/40 px-6 py-3.5 text-sm font-medium text-mges-beige hover:bg-mges-gold/10 transition-colors"
             >
-              What is MGES?
+              Explore committees
             </Link>
           </div>
 

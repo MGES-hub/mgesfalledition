@@ -24,7 +24,6 @@ export function SiteFooter() {
         <div>
           <div className="eyebrow">Navigate</div>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><Link to="/about" className="text-mges-beige/70 hover:text-mges-gold transition-colors">About</Link></li>
             <li><Link to="/committees" className="text-mges-beige/70 hover:text-mges-gold transition-colors">Committees</Link></li>
             <li><Link to="/schedule" className="text-mges-beige/70 hover:text-mges-gold transition-colors">Schedule</Link></li>
             <li><Link to="/delegates" className="text-mges-beige/70 hover:text-mges-gold transition-colors">Delegates</Link></li>
