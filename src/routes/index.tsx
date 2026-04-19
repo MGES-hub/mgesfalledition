@@ -78,7 +78,7 @@ function Home() {
       </section>
 
       {/* Our Committees — Partner Wall */}
-      <section style={{ backgroundColor: "#051626" }} className="border-y border-mges-gold/15">
+      <section style={{ backgroundColor: "#1F3848" }} className="border-y border-mges-gold/15">
         <div className="container-prose py-16 md:py-20">
           <div className="text-center">
             <div className="eyebrow">The Floor</div>
@@ -92,7 +92,7 @@ function Home() {
                 key={c.code}
                 to="/committees"
                 className="group flex flex-col items-center justify-center gap-5 py-10 px-6 transition-colors hover:bg-mges-navy/40"
-                style={{ backgroundColor: "#051626" }}
+                style={{ backgroundColor: "#1F3848" }}
               >
                 <img
                   src={c.logo}
