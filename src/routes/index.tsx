@@ -1,10 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-bg.jpg";
 import bratislavaImg from "@/assets/bratislava-aerial.jpg";
-import bricsLogo from "@/assets/committees/brics.png";
-import hesocLogo from "@/assets/committees/hesoc.png";
-import fomcLogo from "@/assets/committees/fomc.png";
-import wtoLogo from "@/assets/committees/wto.png";
+import bricsLogo from "@/assets/committees/home/brics.png";
+import hesocLogo from "@/assets/committees/home/hesoc.png";
+import fomcLogo from "@/assets/committees/home/fomc.png";
+import wtoLogo from "@/assets/committees/home/wto.png";
 import { Countdown } from "@/components/countdown";
 import { ArrowRight } from "lucide-react";
 
@@ -78,7 +78,7 @@ function Home() {
       </section>
 
       {/* Our Committees — Partner Wall */}
-      <section style={{ backgroundColor: "#1F3848" }} className="border-y border-mges-gold/15">
+      <section style={{ backgroundColor: "#051626" }} className="border-y border-mges-gold/15">
         <div className="container-prose py-16 md:py-20">
           <div className="text-center">
             <div className="eyebrow">The Floor</div>
@@ -92,7 +92,7 @@ function Home() {
                 key={c.code}
                 to="/committees"
                 className="group flex flex-col items-center justify-center gap-5 py-10 px-6 transition-colors hover:bg-mges-navy/40"
-                style={{ backgroundColor: "#1F3848" }}
+                style={{ backgroundColor: "#051626" }}
               >
                 <img
                   src={c.logo}
