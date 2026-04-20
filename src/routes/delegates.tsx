@@ -1,130 +1,165 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/page-header";
-import { Check, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/delegates")({
   head: () => ({
     meta: [
       { title: "For Delegates — MGES 2026" },
-      { name: "description", content: "Everything delegates need: timeline, fees, position papers, dress code, prep materials." },
+      { name: "description", content: "Conference fees, application deadlines and registration details for MGES 2026 delegates, head delegates, faculty advisors and observers." },
       { property: "og:title", content: "MGES 2026 — Delegate Information" },
-      { property: "og:description", content: "Application timeline, fees, prep materials and conference policies for MGES delegates." },
+      { property: "og:description", content: "Transparent fees and clear deadlines for delegates, delegations, faculty advisors and observers." },
     ],
   }),
   component: DelegatesPage,
 });
+
+type FeeRow = { label: string; price: string; note?: string };
+type FeeGroup = { title: string; rows: FeeRow[] };
+
+const feeGroups: FeeGroup[] = [
+  {
+    title: "Individual Delegates",
+    rows: [{ label: "Delegate Fee", price: "€45.00" }],
+  },
+  {
+    title: "Delegations",
+    rows: [
+      { label: "Head Delegate Fee", price: "€45.00" },
+      { label: "Delegation Fee", price: "€30.00", note: "per delegate" },
+      { label: "Faculty Advisor Fee", price: "€45.00" },
+    ],
+  },
+  {
+    title: "Observers",
+    rows: [{ label: "Observer Fee", price: "€45.00" }],
+  },
+];
+
+const deadlines = [
+  {
+    role: "Delegates & Observers",
+    window: "April 2, 2026 – September 23, 2026",
+  },
+  {
+    role: "Head Delegates & Faculty Advisors",
+    window: "April 2, 2026 – September 18, 2026",
+  },
+];
 
 function DelegatesPage() {
   return (
     <>
       <PageHeader
         eyebrow="For delegates"
-        title="Everything you need to arrive prepared."
-        intro="A practical guide to applying, preparing, and showing up ready to debate."
+        title="Conference fees & application deadlines."
+        intro="Transparent pricing and clear timelines for every role at MGES 2026 — from individual delegates to full delegations, faculty advisors and observers."
       />
 
-      <section className="container-prose py-20">
-        <div className="eyebrow">Timeline</div>
-        <h2 className="mt-3 font-display text-3xl md:text-4xl font-medium">Key dates</h2>
-        <div className="mt-10 grid md:grid-cols-4 gap-px bg-border">
-          {[
-            { d: "01 Nov 25", t: "Applications open" },
-            { d: "15 Dec 25", t: "Application deadline" },
-            { d: "10 Jan 26", t: "Country & topic assignment" },
-            { d: "10 Feb 26", t: "Position papers due" },
-          ].map((s, i) => (
-            <div key={s.d} className="bg-background p-6">
-              <div className="font-mono text-xs text-emerald-accent">PHASE 0{i + 1}</div>
-              <div className="mt-3 font-display text-xl">{s.d}</div>
-              <div className="mt-1 text-sm text-muted-foreground">{s.t}</div>
+      {/* Conference Fees */}
+      <section className="container-prose py-20 md:py-28">
+        <div className="flex items-end justify-between gap-6 flex-wrap">
+          <div>
+            <div className="eyebrow">01 / Pricing</div>
+            <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-mges-gold">
+              Conference Fees
+            </h2>
+          </div>
+          <p className="max-w-md text-mges-beige/75 leading-relaxed">
+            All fees are listed in EUR and cover the full three-day program, materials and catering.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-px bg-mges-gold/20 border border-mges-gold/25 lg:grid-cols-3">
+          {feeGroups.map((group) => (
+            <div
+              key={group.title}
+              className="flex flex-col bg-mges-steel p-8 md:p-10"
+            >
+              <div className="font-mono text-xs uppercase tracking-[0.22em] text-mges-gold/80">
+                Category
+              </div>
+              <h3 className="mt-3 font-display text-2xl font-bold text-mges-gold">
+                {group.title}
+              </h3>
+              <div className="mt-6 h-px w-full bg-mges-gold/30" />
+              <ul className="mt-6 space-y-5 flex-1">
+                {group.rows.map((r) => (
+                  <li
+                    key={r.label}
+                    className="flex items-baseline justify-between gap-4 border-b border-mges-gold/10 pb-4 last:border-b-0 last:pb-0"
+                  >
+                    <div>
+                      <div className="font-medium text-mges-beige">{r.label}</div>
+                      {r.note && (
+                        <div className="text-xs text-mges-beige/60 mt-1">{r.note}</div>
+                      )}
+                    </div>
+                    <div className="font-display text-2xl font-bold text-mges-gold whitespace-nowrap">
+                      {r.price}
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-card border-y border-border">
-        <div className="container-prose py-20 grid lg:grid-cols-2 gap-16">
-          <div>
-            <div className="eyebrow">Fees</div>
-            <h2 className="mt-3 font-display text-3xl md:text-4xl font-medium">
-              Transparent and accessible.
-            </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
-              The delegate fee covers all conference materials, three days of catering, and the
-              welcome reception. Need-based waivers are available and reviewed confidentially.
-            </p>
-          </div>
-          <div className="space-y-4">
-            {[
-              { t: "Standard delegate", p: "€85", d: "All sessions, materials, lunches, reception." },
-              { t: "Delegation (5+ from one school)", p: "€70", d: "Per delegate. Includes faculty advisor seat." },
-              { t: "Need-based waiver", p: "€0", d: "Apply confidentially. ~15% of seats reserved." },
-            ].map((f) => (
+      {/* Application Deadlines */}
+      <section className="bg-mges-charcoal border-y border-mges-gold/15">
+        <div className="container-prose py-20 md:py-28">
+          <div className="eyebrow">02 / Timeline</div>
+          <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-mges-gold">
+            Application Deadlines
+          </h2>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
+            {deadlines.map((d) => (
               <div
-                key={f.t}
-                className="flex items-baseline justify-between gap-6 p-6 bg-background rounded-sm border border-border"
+                key={d.role}
+                className="border border-mges-gold/25 bg-mges-navy/40 p-8 md:p-10 rounded-sm"
               >
-                <div>
-                  <div className="font-medium">{f.t}</div>
-                  <div className="text-sm text-muted-foreground mt-1">{f.d}</div>
+                <div className="font-mono text-xs uppercase tracking-[0.22em] text-mges-gold/80">
+                  Application window
                 </div>
-                <div className="font-display text-3xl font-medium text-emerald-accent">{f.p}</div>
+                <h3 className="mt-4 font-display text-2xl md:text-3xl font-bold text-mges-gold leading-tight">
+                  {d.role}
+                </h3>
+                <div className="mt-6 h-px w-16 bg-mges-gold" />
+                <p
+                  className="mt-6 font-display text-xl md:text-2xl font-medium leading-snug"
+                  style={{ color: "#E0D5BD" }}
+                >
+                  {d.window}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="container-prose py-20 grid lg:grid-cols-2 gap-16">
-        <div>
-          <div className="eyebrow">What to prepare</div>
-          <h2 className="mt-3 font-display text-3xl md:text-4xl font-medium">Before you arrive</h2>
-          <ul className="mt-6 space-y-3">
-            {[
-              "Read your committee's background guide cover to cover",
-              "Submit a 1-page position paper (strict deadline)",
-              "Research your country's actual position on the topic",
-              "Draft 2–3 working clauses you'd like to see in the resolution",
-              "Bring a laptop or notepad — and a printed flag",
-            ].map((i) => (
-              <li key={i} className="flex gap-3 items-start">
-                <Check className="h-5 w-5 text-emerald-accent shrink-0 mt-0.5" />
-                <span>{i}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <div className="eyebrow">Conference policies</div>
-          <h2 className="mt-3 font-display text-3xl md:text-4xl font-medium">House rules</h2>
-          <dl className="mt-6 space-y-5">
-            {[
-              ["Dress code", "Western business attire. National dress welcomed."],
-              ["Language", "All proceedings in English."],
-              ["Devices", "Laptops permitted. No phones during formal session."],
-              ["Code of conduct", "Zero tolerance for harassment. Independent reporting channel."],
-            ].map(([t, d]) => (
-              <div key={t} className="border-l-2 border-emerald-accent pl-4">
-                <dt className="font-medium">{t}</dt>
-                <dd className="text-muted-foreground mt-1">{d}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
-
-      <section className="container-prose pb-20">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-8 bg-ink text-bone rounded-sm">
-          <div>
-            <div className="eyebrow text-emerald-glow">Ready?</div>
-            <h3 className="mt-2 font-display text-2xl">Submit your application in 3 minutes.</h3>
+      {/* Register CTA */}
+      <section className="container-prose py-20 md:py-28">
+        <div className="border border-mges-gold/30 bg-mges-steel p-10 md:p-16 rounded-sm text-center">
+          <div className="eyebrow">Ready to take your seat?</div>
+          <h2 className="mt-4 font-display text-3xl md:text-5xl font-bold text-mges-gold leading-[1.05] text-balance">
+            Secure your spot at MGES 2026.
+          </h2>
+          <p className="mt-5 max-w-xl mx-auto text-mges-beige/80 leading-relaxed">
+            Applications are processed through mymun — the official MUN registration platform.
+          </p>
+          <div className="mt-10 flex justify-center">
+            <a
+              href="https://www.mymun.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 rounded-[15px] bg-mges-gold px-8 py-4 text-base font-semibold text-mges-navy hover:bg-mges-beige transition-colors shadow-lg"
+            >
+              Register on mymun
+              <ArrowRight className="h-5 w-5" />
+            </a>
           </div>
-          <Link
-            to="/apply"
-            className="inline-flex items-center gap-2 rounded-sm bg-emerald-accent px-6 py-3.5 text-sm font-medium text-ink hover:bg-emerald-glow transition-colors whitespace-nowrap"
-          >
-            Apply now <ArrowRight className="h-4 w-4" />
-          </Link>
         </div>
       </section>
     </>
