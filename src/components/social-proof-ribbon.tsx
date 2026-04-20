@@ -6,9 +6,6 @@ export function SocialProofRibbon() {
       <div className="container-prose py-6 md:py-7">
         <div className="flex flex-col items-center justify-center gap-2 text-center">
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
-            <span className="font-display text-3xl font-bold leading-none text-foreground md:text-4xl">
-              4.90
-            </span>
             <img
               src={ratingStars}
               alt="Summit rating stars"
@@ -17,6 +14,9 @@ export function SocialProofRibbon() {
               loading="lazy"
               className="h-[2.1rem] w-auto md:h-[2.45rem]"
             />
+            <span className="font-display text-3xl font-bold leading-none text-foreground md:text-4xl">
+              4.90
+            </span>
             <span className="font-display font-semibold leading-tight text-accent whitespace-nowrap md:text-2xl text-3xl">
               Highest Rated Economic Summit in the Region
             </span>
