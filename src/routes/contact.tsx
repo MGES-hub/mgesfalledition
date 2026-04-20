@@ -125,7 +125,7 @@ function ContactPage() {
           <button
             type="submit"
             disabled={submitting}
-            className="inline-flex items-center gap-2 rounded-sm bg-ink px-8 py-3.5 text-sm font-medium text-bone hover:bg-emerald-accent transition-colors disabled:opacity-60"
+            className="inline-flex items-center gap-2 rounded-[15px] bg-mges-royal border-2 border-mges-gold px-8 py-3.5 text-sm font-semibold text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors disabled:opacity-60"
           >
             {submitting && <Loader2 className="h-4 w-4 animate-spin" />}
             Send message

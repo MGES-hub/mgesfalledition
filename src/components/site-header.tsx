@@ -47,7 +47,7 @@ export function SiteHeader() {
         <div className="hidden lg:block">
           <Link
             to="/apply"
-            className="inline-flex items-center gap-2 rounded-sm bg-mges-royal px-5 py-2.5 text-sm font-semibold text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
+          className="inline-flex items-center gap-2 rounded-[15px] bg-mges-royal border-2 border-mges-gold px-5 py-2.5 text-sm font-semibold text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
           >
             <span>🎯</span>
             Apply
@@ -86,7 +86,7 @@ export function SiteHeader() {
           <Link
             to="/apply"
             onClick={() => setOpen(false)}
-            className="mt-3 inline-flex items-center justify-center gap-2 rounded-sm bg-mges-royal px-4 py-3 text-sm font-semibold text-mges-beige"
+            className="mt-3 inline-flex items-center justify-center gap-2 rounded-[15px] bg-mges-royal border-2 border-mges-gold px-4 py-3 text-sm font-semibold text-mges-beige"
           >
             <span>🎯</span> Apply as Delegate
           </Link>
