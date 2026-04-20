@@ -78,6 +78,16 @@ function Home() {
         </div>
       </section>
 
+      {/* Social proof banner */}
+      <section className="bg-mges-navy">
+        <img
+          src={ratingBanner}
+          alt="Rated 4.90 — Highest Rated Economic Summit in the Region. Based on January 2026 delegate feedback."
+          className="block w-full h-auto"
+          loading="lazy"
+        />
+      </section>
+
       {/* Our Committees — Partner Wall */}
       <section style={{ backgroundColor: "#1F3848" }} className="border-y border-mges-gold/15">
         <div className="container-prose py-16 md:py-20">
