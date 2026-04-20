@@ -17,7 +17,7 @@ export function SocialProofRibbon() {
               loading="lazy"
               className="h-[2.1rem] w-auto md:h-[2.45rem]"
             />
-            <span className="font-display text-lg font-semibold leading-tight text-accent whitespace-nowrap md:text-2xl">
+            <span className="font-display font-semibold leading-tight text-accent whitespace-nowrap md:text-2xl text-3xl">
               Highest Rated Economic Summit in the Region
             </span>
           </div>
