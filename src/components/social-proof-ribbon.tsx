@@ -15,7 +15,7 @@ export function SocialProofRibbon() {
               width={180}
               height={32}
               loading="lazy"
-              className="h-6 w-auto md:h-7"
+              className="h-[2.1rem] w-auto md:h-[2.45rem]"
             />
             <span className="max-w-xl font-display text-lg font-semibold leading-tight text-accent md:text-2xl">
               Highest Rated Economic Summit in the Region
