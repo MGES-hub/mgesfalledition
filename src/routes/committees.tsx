@@ -160,13 +160,13 @@ function CommitteesPage() {
                 <button
                   type="button"
                   onClick={() => setOpenCode(c.code)}
-                  className="inline-flex items-center gap-2 rounded-sm bg-mges-royal px-5 py-2.5 text-sm font-medium text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
+                  className="inline-flex items-center gap-2 rounded-[15px] bg-mges-royal border-2 border-mges-gold px-5 py-2.5 text-sm font-semibold text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
                 >
                   View Members
                 </button>
                 <Link
                   to="/apply"
-                  className="inline-flex items-center gap-2 rounded-sm border border-mges-gold/40 px-5 py-2.5 text-sm font-medium text-mges-beige hover:bg-mges-gold/10 transition-colors"
+                  className="inline-flex items-center gap-2 rounded-[15px] border border-mges-gold/40 px-5 py-2.5 text-sm font-medium text-mges-beige hover:bg-mges-gold/10 transition-colors"
                 >
                   Apply for seat <ArrowRight className="h-4 w-4" />
                 </Link>
