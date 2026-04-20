@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-bg.jpg";
 import bratislavaImg from "@/assets/bratislava-aerial.jpg";
+import ratingBanner from "@/assets/rating-banner.png";
 import bricsLogo from "@/assets/committees/home/brics.png";
 import hesocLogo from "@/assets/committees/home/hesoc.png";
 import fomcLogo from "@/assets/committees/home/fomc.png";
@@ -46,24 +47,24 @@ function Home() {
         <div className="relative container-prose pt-24 pb-20 md:pt-36 md:pb-32">
           <div className="eyebrow">Bratislava · 21—23 Feb 2026</div>
           <h1 className="mt-6 font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.92] text-balance max-w-4xl text-mges-gold">
-            Simulating the future of <em className="not-italic">global economics.</em>
+            MGES Fall Edition 2026: <em className="not-italic">Navigating the New Economic Frontier.</em>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-mges-beige/85 leading-relaxed">
-            A three-day simulation focused on international economic policy. Represent states and
-            institutions, negotiate solutions, draft resolutions.
+            Building on the success of our January summit, we return to Bratislava for a high-stakes
+            simulation of global financial governance.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
               to="/apply"
-              className="inline-flex items-center gap-2 rounded-sm bg-mges-royal px-6 py-3.5 text-sm font-medium text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
+              className="inline-flex items-center gap-2 rounded-[15px] bg-mges-royal border-2 border-mges-gold px-6 py-3.5 text-sm font-semibold text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
             >
-              Apply as a delegate
+              Apply for Fall Edition 2026
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               to="/committees"
-              className="inline-flex items-center gap-2 rounded-sm border border-mges-gold/40 px-6 py-3.5 text-sm font-medium text-mges-beige hover:bg-mges-gold/10 transition-colors"
+              className="inline-flex items-center gap-2 rounded-[15px] border border-mges-gold/40 px-6 py-3.5 text-sm font-medium text-mges-beige hover:bg-mges-gold/10 transition-colors"
             >
               Explore committees
             </Link>
