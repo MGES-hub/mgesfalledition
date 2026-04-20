@@ -1,12 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-bg.jpg";
-import bratislavaImg from "@/assets/bratislava-aerial.jpg";
-import ratingBanner from "@/assets/rating-banner.png";
+import bratislavaImg from "@/assets/bratislava-panorama-home.png";
 import bricsLogo from "@/assets/committees/home/brics.png";
 import hesocLogo from "@/assets/committees/home/hesoc.png";
 import fomcLogo from "@/assets/committees/home/fomc.png";
 import wtoLogo from "@/assets/committees/home/wto.png";
-import { Countdown } from "@/components/countdown";
+import { SocialProofRibbon } from "@/components/social-proof-ribbon";
 import { ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -45,9 +44,14 @@ function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-mges-navy/55 via-mges-navy/70 to-mges-navy" />
         <div className="relative container-prose pt-24 pb-20 md:pt-36 md:pb-32">
-          <div className="eyebrow">Bratislava · 21—23 Feb 2026</div>
-          <h1 className="mt-6 font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.92] text-balance max-w-4xl text-mges-gold">
-            MGES Fall Edition 2026: <em className="not-italic">Navigating the New Economic Frontier.</em>
+          <div className="font-mono text-sm font-medium uppercase tracking-[0.26em] text-mges-gold md:text-base">
+            Bratislava · 21—23 Feb 2026
+          </div>
+          <h1 className="mt-6 max-w-4xl text-balance font-display text-5xl leading-[0.92] font-bold tracking-tight text-mges-gold md:text-7xl lg:text-8xl">
+            <span className="block">MGES Fall Edition 2026:</span>
+            <span className="mt-4 block text-3xl leading-[1] md:text-5xl lg:text-6xl">
+              Navigating the New Economic Frontier.
+            </span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-mges-beige/85 leading-relaxed">
             Building on the success of our January summit, we return to Bratislava for a high-stakes
@@ -69,23 +73,45 @@ function Home() {
               Explore committees
             </Link>
           </div>
-
-          <div className="mt-16 pt-8 border-t border-mges-gold/20">
-            <div className="bg-mges-navy/40 backdrop-blur rounded-sm px-5 py-4 inline-block border border-mges-gold/20">
-              <Countdown />
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Social proof banner */}
-      <section className="bg-mges-navy">
+      <SocialProofRibbon />
+
+      {/* Bratislava — compact location ribbon */}
+      <section className="relative overflow-hidden border-b border-mges-gold/15">
         <img
-          src={ratingBanner}
-          alt="Rated 4.90 — Highest Rated Economic Summit in the Region. Based on January 2026 delegate feedback."
-          className="block w-full h-auto"
+          src={bratislavaImg}
+          alt="Bratislava panorama at golden hour"
+          width={1920}
+          height={768}
           loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-mges-navy/95 via-mges-navy/75 to-mges-navy/40" />
+        <div className="relative container-prose flex flex-col gap-6 py-12 md:flex-row md:items-center md:justify-between md:py-14">
+          <div className="max-w-xl">
+            <div className="eyebrow">Hosted in</div>
+            <h2 className="mt-2 font-display text-2xl font-bold leading-tight text-mges-gold md:text-4xl">
+              Bratislava — at the heart of Central Europe.
+            </h2>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              to="/apply"
+              className="inline-flex items-center gap-2 rounded-[15px] bg-mges-royal border-2 border-mges-gold px-5 py-3 text-sm font-semibold text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
+            >
+              Secure your seat
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/schedule"
+              className="inline-flex items-center gap-2 rounded-[15px] border border-mges-gold/50 px-5 py-3 text-sm font-medium text-mges-beige hover:bg-mges-gold/10 transition-colors"
+            >
+              See the schedule
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* Our Committees — Partner Wall */}
@@ -123,42 +149,6 @@ function Home() {
                 </div>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Bratislava — compact location ribbon */}
-      <section className="relative overflow-hidden border-b border-mges-gold/15">
-        <img
-          src={bratislavaImg}
-          alt="Bratislava aerial at golden hour"
-          width={1920}
-          height={768}
-          loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-mges-navy/95 via-mges-navy/75 to-mges-navy/40" />
-        <div className="relative container-prose py-12 md:py-14 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div className="max-w-xl">
-            <div className="eyebrow">Hosted in</div>
-            <h2 className="mt-2 font-display text-2xl md:text-4xl font-bold text-mges-gold leading-tight">
-              Bratislava — at the heart of Central Europe.
-            </h2>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              to="/apply"
-              className="inline-flex items-center gap-2 rounded-[15px] bg-mges-royal border-2 border-mges-gold px-5 py-3 text-sm font-semibold text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
-            >
-              Secure your seat
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              to="/schedule"
-              className="inline-flex items-center gap-2 rounded-[15px] border border-mges-gold/50 px-5 py-3 text-sm font-medium text-mges-beige hover:bg-mges-gold/10 transition-colors"
-            >
-              See the schedule
-            </Link>
           </div>
         </div>
       </section>
