@@ -148,14 +148,14 @@ function Home() {
           <div className="flex flex-wrap gap-3">
             <Link
               to="/apply"
-              className="inline-flex items-center gap-2 rounded-sm bg-mges-royal px-5 py-3 text-sm font-medium text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
+              className="inline-flex items-center gap-2 rounded-[15px] bg-mges-royal border-2 border-mges-gold px-5 py-3 text-sm font-semibold text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
             >
               Secure your seat
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               to="/schedule"
-              className="inline-flex items-center gap-2 rounded-sm border border-mges-gold/50 px-5 py-3 text-sm font-medium text-mges-beige hover:bg-mges-gold/10 transition-colors"
+              className="inline-flex items-center gap-2 rounded-[15px] border border-mges-gold/50 px-5 py-3 text-sm font-medium text-mges-beige hover:bg-mges-gold/10 transition-colors"
             >
               See the schedule
             </Link>
