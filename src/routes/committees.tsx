@@ -6,6 +6,7 @@ import fomcLogo from "@/assets/committees/fomc.png";
 import bricsLogo from "@/assets/committees/brics.png";
 import wtoLogo from "@/assets/committees/wto.png";
 import hesocLogo from "@/assets/committees/hesoc.png";
+import { committeeOptions } from "@/lib/committee-options";
 
 export const Route = createFileRoute("/committees")({
   head: () => ({
@@ -40,11 +41,7 @@ const committees: Committee[] = [
     chairs: "Samuel Vojtech Remenár & Adrian Bednár",
     description:
       "Delegates will dive into a 'what if' scenario where Zohran K. Mamdani becomes the new President of the USA, while Elon Musk holds the absolute majority in both the Senate and the House of Representatives. Central bankers must find a consensus between the President and the Technocratic Party.",
-    members: [
-      "Amir Yaron", "Anna Paulson", "Elon Musk", "Javier Milei", "John C. Williams",
-      "Kevin Maxwell Warsh", "Lisa D. Cook", "Michelle W. Bowman", "Neel Kashkari",
-      "Pablo Hernández de Cos", "U.S. Department of the Treasury", "Zohran Kwame Mamdani",
-    ],
+    members: [...committeeOptions[0].members],
   },
   {
     code: "BRICS",
@@ -55,11 +52,7 @@ const committees: Committee[] = [
     chairs: "Martin Kníž & Filip Truhlář",
     description:
       "The coalition of major emerging economies will explore reshaping global monetary policy by reducing dependence on the US Dollar. Delegates will debate a common BRICS currency, national currency trade, the expansion of the New Development Bank, and the geopolitical influence of the Federal Reserve.",
-    members: [
-      "Brazil", "China", "Egypt", "Ethiopia", "Federal Reserve System", "India",
-      "Indonesia", "International Monetary Fund", "Iran", "New Development Bank",
-      "Russian Federation", "South Africa", "United Arab Emirates", "United States",
-    ],
+    members: [...committeeOptions[1].members],
   },
   {
     code: "WTO",
@@ -69,11 +62,7 @@ const committees: Committee[] = [
     size: 16,
     description:
       "Delegates will examine the framework of Special and Differential Treatment (SDT) and its role in supporting developing economies. The committee will debate how SDT provisions can be reformed to ensure fairness and accountability while balancing free trade principles.",
-    members: [
-      "Argentina", "Australia", "Bangladesh", "Brazil", "Canada", "China", "Ethiopia",
-      "European Union", "India", "Japan", "Mexico", "Nigeria", "United Kingdom",
-      "United States", "Venezuela", "Viet Nam",
-    ],
+    members: [...committeeOptions[2].members],
   },
   {
     code: "HESOC",
@@ -84,14 +73,7 @@ const committees: Committee[] = [
     chairs: "Vladimír Brdečka & Olívia Jánošíková",
     description:
       "Set in 1992, delegates take the roles of historical global leaders. As Soviet influence declines, a new superpower seeks to counterbalance the USA. The committee will design institutions and trade systems to reflect this shifting Post-Cold War power balance.",
-    members: [
-      "Boris Yeltsin (Russia)", "Fernando Collor de Mello (Brazil)", "Fidel Castro (Cuba)",
-      "François Mitterrand (France)", "George H. W. Bush (USA)", "Helmut Kohl (Germany)",
-      "Jiang Zemin (China)", "John Major (UK)", "John Paul II (Holy See)",
-      "Kiichi Miyazawa (Japan)", "Kim Il Sung (DPRK)", "King Fahd bin Abdulaziz Al Saud (Saudi Arabia)",
-      "Lech Wałęsa (Poland)", "Nelson Mandela (South Africa)", "Roh Tae-woo (South Korea)",
-      "Saddam Hussein (Iraq)", "Václav Havel (Czechoslovakia)",
-    ],
+    members: [...committeeOptions[3].members],
   },
 ];
 
