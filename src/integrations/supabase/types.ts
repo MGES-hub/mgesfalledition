@@ -43,9 +43,9 @@ export type Database = {
       }
       delegate_applications: {
         Row: {
-          age: number
+          age: number | null
           committee_preference: string
-          country: string
+          country: string | null
           created_at: string
           dietary_requirements: string | null
           email: string
@@ -64,9 +64,9 @@ export type Database = {
           university_school: string
         }
         Insert: {
-          age: number
+          age?: number | null
           committee_preference: string
-          country: string
+          country?: string | null
           created_at?: string
           dietary_requirements?: string | null
           email: string
@@ -85,9 +85,9 @@ export type Database = {
           university_school: string
         }
         Update: {
-          age?: number
+          age?: number | null
           committee_preference?: string
-          country?: string
+          country?: string | null
           created_at?: string
           dietary_requirements?: string | null
           email?: string
