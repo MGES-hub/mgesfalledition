@@ -160,16 +160,15 @@ function Home() {
       {/* What it is */}
       <section className="container-prose py-20 md:py-28 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
-          <div className="eyebrow">01 / What it is</div>
-          <h2 className="mt-4 font-display text-5xl md:text-7xl font-bold leading-[0.95] text-balance text-mges-gold">
+          <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] text-balance text-mges-gold">
             🏛️ What it is
           </h2>
         </div>
         <div className="lg:col-span-7 space-y-5 text-lg text-mges-beige/85 leading-relaxed self-center">
           <p className="text-2xl text-mges-beige font-medium">
-            Macroeconomic Governance, Not General Diplomacy.
+            Real economics. Real stakes.
           </p>
-          <p>Three days. Six committees. One conversation about how the global economy actually works.</p>
+          <p>Three days. Four committees. One mission — debate the policies that move the world economy.</p>
         </div>
       </section>
 
@@ -177,16 +176,15 @@ function Home() {
       <section className="bg-mges-charcoal border-y border-mges-gold/15">
         <div className="container-prose py-20 md:py-28 grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
-            <div className="eyebrow">02 / Why it matters</div>
-            <h2 className="mt-4 font-display text-5xl md:text-7xl font-bold leading-[0.95] text-balance text-mges-gold">
+            <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] text-balance text-mges-gold">
             ⚖️ Why it matters
             </h2>
           </div>
           <div className="lg:col-span-7 space-y-5 text-lg text-mges-beige/85 leading-relaxed self-center">
             <p className="text-2xl text-mges-beige font-medium">
-            Economics Is Geopolitics.
+            Money is power.
             </p>
-            <p>From central bank coordination to sovereign restructuring — the decisions that shape billions of lives.</p>
+            <p>Interest rates, trade wars, sanctions — the levers that decide who wins and who loses.</p>
           </div>
         </div>
       </section>
@@ -194,16 +192,15 @@ function Home() {
       {/* Who it's for */}
       <section className="container-prose py-20 md:py-28 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
-          <div className="eyebrow">03 / Who it's for</div>
-          <h2 className="mt-4 font-display text-5xl md:text-7xl font-bold leading-[0.95] text-balance text-mges-gold">
+          <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] text-balance text-mges-gold">
             📈 Who it's for
           </h2>
         </div>
         <div className="lg:col-span-7 space-y-5 text-lg text-mges-beige/85 leading-relaxed self-center">
           <p className="text-2xl text-mges-beige font-medium">
-            Rigour for the 14–22 Age Range.
+            Ages 14–22. Ambition required.
           </p>
-          <p>Economics, IR, public policy — or simply curious and prepared. First-time delegates and veteran chairs alike.</p>
+          <p>Future economists, diplomats, and leaders — whether it's your first conference or your fiftieth.</p>
         </div>
       </section>
     </>
