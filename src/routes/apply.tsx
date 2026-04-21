@@ -5,7 +5,7 @@ import { z } from "zod";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { committeeOptions, getCommittee } from "@/lib/committee-options";
-import { submitApplication } from "./apply.functions";
+import { submitApplication } from "./-apply.functions";
 
 export const Route = createFileRoute("/apply")({
   head: () => ({
