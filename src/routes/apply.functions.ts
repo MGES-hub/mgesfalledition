@@ -22,7 +22,7 @@ export const applicationSchema = z.object({
   ([1, 2, 3] as const).forEach((index) => {
     const committee = getCommittee(data[`preference_${index}_committee`]);
     const member = data[`preference_${index}_member`];
-    if (!committee?.members.includes(member)) {
+    if (!(committee?.members as readonly string[] | undefined)?.includes(member)) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
         path: [`preference_${index}_member`],

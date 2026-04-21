@@ -11,7 +11,7 @@ export function SiteFooter() {
             <div>
               <div className="font-display text-xl font-bold text-mges-gold">Model Global Economic Summit</div>
               <div className="text-xs font-mono uppercase tracking-[0.22em] text-mges-gold/70 mt-1">
-                Bratislava · Feb 21–23, 2026
+                Bratislava · September 25–27, 2026
               </div>
             </div>
           </div>

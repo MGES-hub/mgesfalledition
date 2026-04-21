@@ -16,7 +16,7 @@ export const Route = createFileRoute("/schedule")({
 const days = [
   {
     label: "Day 1",
-    date: "Saturday, 21 February 2026",
+    date: "Friday, 25 September 2026",
     venue: "Faculty of Economics, Comenius University",
     items: [
       ["08:30", "Arrival & registration", "Main lobby"],
@@ -29,7 +29,7 @@ const days = [
   },
   {
     label: "Day 2",
-    date: "Sunday, 22 February 2026",
+    date: "Saturday, 26 September 2026",
     venue: "National Bank of Slovakia · Conference Centre",
     items: [
       ["09:00", "Committee session III — working papers", "Committee rooms"],
@@ -42,7 +42,7 @@ const days = [
   },
   {
     label: "Day 3",
-    date: "Monday, 23 February 2026",
+    date: "Sunday, 27 September 2026",
     venue: "Slovak Ministry of Finance",
     items: [
       ["09:00", "Committee session V — draft resolution merging", "Committee rooms"],
