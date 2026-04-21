@@ -6,13 +6,14 @@ import hesocLogo from "@/assets/committees/home/hesoc.png";
 import fomcLogo from "@/assets/committees/home/fomc.png";
 import wtoLogo from "@/assets/committees/home/wto.png";
 import { SocialProofRibbon } from "@/components/social-proof-ribbon";
+import { Countdown } from "@/components/countdown";
 import { ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "MGES 2026 — Model Global Economic Summit · Bratislava" },
-      { name: "description", content: "A three-day student simulation of international economic institutions. Real macroeconomic policy debate. Bratislava, Feb 21–23, 2026." },
+      { name: "description", content: "A three-day student simulation of international economic institutions. Real macroeconomic policy debate. Bratislava, September 25–27, 2026." },
       { property: "og:title", content: "MGES 2026 — Model Global Economic Summit" },
       { property: "og:description", content: "Three days of macroeconomic policy debate, negotiation and strategy. For students 14–22." },
       { property: "og:image", content: heroImg },
@@ -45,7 +46,7 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-mges-navy/55 via-mges-navy/70 to-mges-navy" />
         <div className="relative container-prose pt-24 pb-20 md:pt-36 md:pb-32">
           <div className="font-mono text-sm font-medium uppercase tracking-[0.26em] text-mges-gold md:text-base">
-            Bratislava · 21—23 Feb 2026
+            Bratislava · 25—27 September 2026
           </div>
           <h1 className="mt-6 max-w-4xl text-balance font-display text-5xl leading-[0.92] font-bold tracking-tight text-mges-gold md:text-7xl lg:text-8xl">
             <span className="block">MGES Fall Edition 2026:</span>
@@ -54,9 +55,12 @@ function Home() {
             </span>
           </h1>
           <p className="mt-8 max-w-xl text-lg text-mges-beige/85 leading-relaxed">
-            Building on the success of our January summit, we return to Bratislava for a high-stakes
+            Building on the success of our previous summit, we return to Bratislava for a high-stakes
             simulation of global financial governance.
           </p>
+          <div className="mt-8 inline-flex border border-mges-gold/30 bg-mges-navy/60 px-5 py-4 backdrop-blur-sm">
+            <Countdown />
+          </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
@@ -157,13 +161,13 @@ function Home() {
       <section className="container-prose py-20 md:py-28 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
           <div className="eyebrow">01 / What it is</div>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl font-bold leading-[1.05] text-balance text-mges-gold">
-            Macroeconomic Governance, Not General Diplomacy.
+          <h2 className="mt-4 font-display text-5xl md:text-7xl font-bold leading-[0.95] text-balance text-mges-gold">
+            🏛️ What it is
           </h2>
         </div>
         <div className="lg:col-span-7 space-y-5 text-lg text-mges-beige/85 leading-relaxed self-center">
           <p className="text-2xl text-mges-beige font-medium">
-            A specialized simulation of macroeconomic policy.
+            Macroeconomic Governance, Not General Diplomacy.
           </p>
           <p>Three days. Six committees. One conversation about how the global economy actually works.</p>
         </div>
@@ -174,13 +178,13 @@ function Home() {
         <div className="container-prose py-20 md:py-28 grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
             <div className="eyebrow">02 / Why it matters</div>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl font-bold leading-[1.05] text-balance text-mges-gold">
-              Economics Is Geopolitics.
+            <h2 className="mt-4 font-display text-5xl md:text-7xl font-bold leading-[0.95] text-balance text-mges-gold">
+            ⚖️ Why it matters
             </h2>
           </div>
           <div className="lg:col-span-7 space-y-5 text-lg text-mges-beige/85 leading-relaxed self-center">
             <p className="text-2xl text-mges-beige font-medium">
-              The seat, the brief, and the burden of decision-making.
+            Economics Is Geopolitics.
             </p>
             <p>From central bank coordination to sovereign restructuring — the decisions that shape billions of lives.</p>
           </div>
@@ -191,13 +195,13 @@ function Home() {
       <section className="container-prose py-20 md:py-28 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
           <div className="eyebrow">03 / Who it's for</div>
-          <h2 className="mt-4 font-display text-4xl md:text-5xl font-bold leading-[1.05] text-balance text-mges-gold">
-            Rigour for the 14–22 Age Range.
+          <h2 className="mt-4 font-display text-5xl md:text-7xl font-bold leading-[0.95] text-balance text-mges-gold">
+            📈 Who it's for
           </h2>
         </div>
         <div className="lg:col-span-7 space-y-5 text-lg text-mges-beige/85 leading-relaxed self-center">
           <p className="text-2xl text-mges-beige font-medium">
-            Committed high-schoolers and undergraduates.
+            Rigour for the 14–22 Age Range.
           </p>
           <p>Economics, IR, public policy — or simply curious and prepared. First-time delegates and veteran chairs alike.</p>
         </div>
