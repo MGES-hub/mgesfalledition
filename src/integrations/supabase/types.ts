@@ -47,36 +47,63 @@ export type Database = {
           committee_preference: string
           country: string
           created_at: string
+          dietary_requirements: string | null
           email: string
           experience: string
           full_name: string
           id: string
           motivation: string
+          motivation_letter: string
+          preference_1_committee: string
+          preference_1_member: string
+          preference_2_committee: string
+          preference_2_member: string
+          preference_3_committee: string
+          preference_3_member: string
           school: string
+          university_school: string
         }
         Insert: {
           age: number
           committee_preference: string
           country: string
           created_at?: string
+          dietary_requirements?: string | null
           email: string
           experience: string
           full_name: string
           id?: string
           motivation: string
+          motivation_letter: string
+          preference_1_committee: string
+          preference_1_member: string
+          preference_2_committee: string
+          preference_2_member: string
+          preference_3_committee: string
+          preference_3_member: string
           school: string
+          university_school: string
         }
         Update: {
           age?: number
           committee_preference?: string
           country?: string
           created_at?: string
+          dietary_requirements?: string | null
           email?: string
           experience?: string
           full_name?: string
           id?: string
           motivation?: string
+          motivation_letter?: string
+          preference_1_committee?: string
+          preference_1_member?: string
+          preference_2_committee?: string
+          preference_2_member?: string
+          preference_3_committee?: string
+          preference_3_member?: string
           school?: string
+          university_school?: string
         }
         Relationships: []
       }
