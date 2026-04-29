@@ -57,8 +57,8 @@
 
   /* MGES brand palette — exact hex */
   --mges-navy: #051626;        /* primary background */
-  --mges-charcoal: #1E1E1E;    /* dark alt sections / footer */
-  --mges-steel: #1F3848;       /* structural / cards / separators */
+  --mges-charcoal: #051626;    /* unified — use primary navy everywhere */
+  --mges-steel: #051626;       /* unified — use primary navy everywhere */
   --mges-royal: #16265A;       /* buttons / interactive */
   --mges-gold: #C69E56;        /* headings, highlights */
   --mges-beige: #E0D5BD;       /* body text, UI labels */
