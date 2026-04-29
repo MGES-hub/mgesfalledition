@@ -101,19 +101,19 @@ function CommitteesPage() {
           {committees.map((c) => (
             <article
               key={c.code}
-              className="flex flex-col rounded-sm border border-mges-gold/20 p-8 md:p-10"
+              className="flex flex-col items-center text-center rounded-sm border border-mges-gold/20 p-8 md:p-10"
               style={{ backgroundColor: "#051626" }}
             >
-              <div className="flex items-start gap-5">
+              <div className="flex flex-col items-center gap-4">
                 <img
                   src={c.logo}
                   alt={`${c.name} logo`}
                   width={96}
                   height={96}
                   loading="lazy"
-                  className="h-20 w-20 md:h-24 md:w-24 object-contain shrink-0"
+                  className="h-24 w-24 md:h-28 md:w-28 object-contain shrink-0"
                 />
-                <div className="min-w-0 flex-1">
+                <div className="min-w-0">
                   <div className="font-display text-3xl md:text-4xl font-bold leading-tight text-mges-gold">
                     {c.code}
                   </div>
@@ -121,11 +121,11 @@ function CommitteesPage() {
                 </div>
               </div>
 
-              <p className="mt-6 text-mges-beige/85 leading-relaxed">
+              <p className="mt-6 text-mges-beige/85 leading-relaxed max-w-prose">
                 {c.description}
               </p>
 
-              <dl className="mt-6 grid grid-cols-2 gap-x-4 gap-y-2 text-sm border-t border-mges-gold/15 pt-5">
+              <dl className="mt-6 w-full grid grid-cols-2 gap-x-4 gap-y-2 text-sm border-t border-mges-gold/15 pt-5 text-center">
                 <dt className="font-mono uppercase text-[10px] tracking-[0.18em] text-mges-beige/55">Difficulty</dt>
                 <dt className="font-mono uppercase text-[10px] tracking-[0.18em] text-mges-beige/55">Size</dt>
                 <dd className={`font-display text-base ${difficultyColor[c.difficulty]}`}>{c.difficulty}</dd>
@@ -138,7 +138,7 @@ function CommitteesPage() {
                 )}
               </dl>
 
-              <div className="mt-7 flex flex-wrap gap-3">
+              <div className="mt-7 flex flex-wrap justify-center gap-3">
                 <button
                   type="button"
                   onClick={() => setOpenCode(c.code)}
