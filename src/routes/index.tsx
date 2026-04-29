@@ -119,7 +119,7 @@ function Home() {
       </section>
 
       {/* Our Committees — Partner Wall */}
-      <section style={{ backgroundColor: "#1F3848" }} className="border-y border-mges-gold/15">
+      <section className="bg-mges-navy border-y border-mges-gold/15">
         <div className="container-prose py-16 md:py-20">
           <div className="text-center">
             <div className="eyebrow">The Floor</div>
@@ -132,8 +132,7 @@ function Home() {
               <Link
                 key={c.code}
                 to="/committees"
-                className="group flex flex-col items-center justify-center gap-5 py-10 px-6 transition-colors hover:bg-mges-navy/40"
-                style={{ backgroundColor: "#1F3848" }}
+                className="group flex flex-col items-center justify-center gap-5 py-10 px-6 bg-mges-navy transition-colors hover:bg-mges-gold/5"
               >
                 <img
                   src={c.logo}
@@ -161,7 +160,7 @@ function Home() {
       <section className="container-prose py-20 md:py-28 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
           <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] text-balance text-mges-gold">
-            🏛️ What it is
+            What it is
           </h2>
         </div>
         <div className="lg:col-span-7 space-y-5 text-lg text-mges-beige/85 leading-relaxed self-center">
@@ -177,7 +176,7 @@ function Home() {
         <div className="container-prose py-20 md:py-28 grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">
             <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] text-balance text-mges-gold">
-            ⚖️ Why it matters
+              Why it matters
             </h2>
           </div>
           <div className="lg:col-span-7 space-y-5 text-lg text-mges-beige/85 leading-relaxed self-center">
@@ -193,12 +192,12 @@ function Home() {
       <section className="container-prose py-20 md:py-28 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
           <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] text-balance text-mges-gold">
-            📈 Who it's for
+            Who it's for
           </h2>
         </div>
         <div className="lg:col-span-7 space-y-5 text-lg text-mges-beige/85 leading-relaxed self-center">
           <p className="text-2xl text-mges-beige font-medium">
-            Ages 14–22. Ambition required.
+            Ages 14–21. Ambition required.
           </p>
           <p>Future economists, diplomats, and leaders — whether it's your first conference or your fiftieth.</p>
         </div>
