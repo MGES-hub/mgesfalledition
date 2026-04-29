@@ -140,7 +140,7 @@ function Home() {
                   width={160}
                   height={160}
                   loading="lazy"
-                  className="h-24 w-24 md:h-28 md:w-28 object-contain transition-transform group-hover:scale-105"
+                  className="h-24 w-24 md:h-28 md:w-28 object-cover rounded-full bg-mges-beige/5 transition-transform group-hover:scale-105"
                 />
                 <div className="text-center">
                   <div className="font-display text-lg md:text-xl font-bold text-mges-gold leading-tight">
@@ -167,7 +167,7 @@ function Home() {
           <p className="text-2xl text-mges-beige font-medium">
             Real economics. Real stakes.
           </p>
-          <p>Three days. Four committees. One mission — debate the policies that move the world economy.</p>
+          <p>A premier three-day simulation of global financial governance. Moving beyond general diplomacy, MGES focuses exclusively on macroeconomic policy, central banking, and international trade. Delegates represent major economies and institutions to negotiate the fiscal and monetary solutions that shape the modern world.</p>
         </div>
       </section>
 
@@ -181,9 +181,9 @@ function Home() {
           </div>
           <div className="lg:col-span-7 space-y-5 text-lg text-mges-beige/85 leading-relaxed self-center">
             <p className="text-2xl text-mges-beige font-medium">
-            Money is power.
+              Money is power.
             </p>
-            <p>Interest rates, trade wars, sanctions — the levers that decide who wins and who loses.</p>
+            <p>In a globalized landscape, economic policy is the foundation of geopolitics. From interest rate hikes to trade sanctions, the decisions made in these rooms determine the wealth and stability of nations. Understanding these levers is essential for any future leader in finance, law, or international relations.</p>
           </div>
         </div>
       </section>
@@ -199,7 +199,7 @@ function Home() {
           <p className="text-2xl text-mges-beige font-medium">
             Ages 14–21. Ambition required.
           </p>
-          <p>Future economists, diplomats, and leaders — whether it's your first conference or your fiftieth.</p>
+          <p>Designed for high-school and university students with a sharp interest in economics and high-stakes negotiation. Whether you are an aspiring economist or a seasoned debater, MGES provides a rigorous environment to test your strategic thinking and policy-making skills against the region's best.</p>
         </div>
       </section>
     </>
