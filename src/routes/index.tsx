@@ -140,7 +140,7 @@ function Home() {
                   width={160}
                   height={160}
                   loading="lazy"
-                  className="h-24 w-24 md:h-28 md:w-28 object-contain transition-transform group-hover:scale-105"
+                  className="h-24 w-24 md:h-28 md:w-28 object-cover rounded-full bg-mges-beige/5 transition-transform group-hover:scale-105"
                 />
                 <div className="text-center">
                   <div className="font-display text-lg md:text-xl font-bold text-mges-gold leading-tight">
