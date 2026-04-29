@@ -36,7 +36,7 @@ export function SiteFooter() {
           <ul className="mt-4 space-y-2 text-sm text-mges-beige/70">
             <li>info@mges.sk</li>
             <li>Bratislava, Slovakia</li>
-            <li><Link to="/apply" className="text-mges-gold hover:underline">Apply now →</Link></li>
+            <li><a href="https://mymun.com/conferences/mges-fall-edition-2026/apply" target="_blank" rel="noopener noreferrer" className="text-mges-gold hover:underline">Apply now →</a></li>
           </ul>
         </div>
       </div>
