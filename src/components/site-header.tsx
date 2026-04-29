@@ -4,14 +4,13 @@ import { cn } from "@/lib/utils";
 import { MgesLogo } from "@/components/mges-logo";
 
 const links = [
-  { to: "/", label: "Home", icon: "🏛️" },
-  { to: "/committees", label: "Committees", icon: "🌍" },
-  { to: "/schedule", label: "Schedule", icon: "🗓️" },
-  { to: "/delegates", label: "Delegates", icon: "🎓" },
-  { to: "/secretariat", label: "Secretariat", icon: "👔" },
-  { to: "/sponsors", label: "Sponsors", icon: "🤝" },
-  { to: "/gallery", label: "Gallery", icon: "📸" },
-  { to: "/contact", label: "Contact", icon: "✉️" },
+  { to: "/", label: "Home" },
+  { to: "/committees", label: "Committees" },
+  { to: "/schedule", label: "Schedule" },
+  { to: "/delegates", label: "Delegates" },
+  { to: "/secretariat", label: "Secretariat" },
+  { to: "/gallery", label: "Gallery" },
+  { to: "/contact", label: "Contact" },
 ] as const;
 
 export function SiteHeader() {
@@ -49,17 +48,16 @@ export function SiteHeader() {
             to="/apply"
           className="inline-flex items-center gap-2 rounded-[15px] bg-mges-royal border-2 border-mges-gold px-5 py-2.5 text-sm font-semibold text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
           >
-            <span>🎯</span>
             Apply
           </Link>
         </div>
 
         <button
-          className="lg:hidden p-2 text-mges-gold text-2xl leading-none"
+          className="lg:hidden p-2 text-mges-gold text-2xl leading-none font-mono"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          {open ? "✕" : "☰"}
+          {open ? "Close" : "Menu"}
         </button>
       </div>
 
@@ -76,10 +74,9 @@ export function SiteHeader() {
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
               onClick={() => setOpen(false)}
-              className="py-2.5 text-sm text-mges-beige/75 flex items-center gap-3"
-              activeProps={{ className: "py-2.5 text-sm text-mges-gold font-semibold flex items-center gap-3" }}
+              className="py-2.5 text-sm text-mges-beige/75"
+              activeProps={{ className: "py-2.5 text-sm text-mges-gold font-semibold" }}
             >
-              <span>{l.icon}</span>
               {l.label}
             </Link>
           ))}
@@ -88,7 +85,7 @@ export function SiteHeader() {
             onClick={() => setOpen(false)}
             className="mt-3 inline-flex items-center justify-center gap-2 rounded-[15px] bg-mges-royal border-2 border-mges-gold px-4 py-3 text-sm font-semibold text-mges-beige"
           >
-            <span>🎯</span> Apply as Delegate
+            Apply as Delegate
           </Link>
         </nav>
       </div>

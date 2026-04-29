@@ -5,78 +5,67 @@ export const Route = createFileRoute("/secretariat")({
   head: () => ({
     meta: [
       { title: "Secretariat — MGES 2026" },
-      { name: "description", content: "Meet the student secretariat and chairs running MGES 2026." },
-      { property: "og:title", content: "MGES 2026 Secretariat" },
-      { property: "og:description", content: "The student team running the Model Global Economic Summit 2026." },
+      { name: "description", content: "Meet the 2026 MGES Directorate — the organizers running the Model Global Economic Summit." },
+      { property: "og:title", content: "MGES 2026 Directorate" },
+      { property: "og:description", content: "The student-led directorate behind MGES Fall 2026." },
     ],
   }),
   component: SecretariatPage,
 });
 
-const board = [
-  { name: "Adriana Kováčová", role: "Secretary-General", bio: "Final-year IB student, MUNoV finalist 2024." },
-  { name: "Matúš Horváth", role: "Director-General", bio: "Economics & finance, BISB. Two-time chair." },
-  { name: "Sofia Németh", role: "Director of Committees", bio: "PPE candidate. Former WTO simulation winner." },
+const organizers = [
+  { name: "Vladimír Brdečka", role: "Director-General" },
+  { name: "Barbora Majerská", role: "Director of Communication" },
+  { name: "Daniel Isteník", role: "Director of Design" },
+  { name: "Lucia Brdečková", role: "Director of Pages" },
+  { name: "Martin Kníž", role: "Director of Marketing" },
+  { name: "Matilda Dittelova", role: "Director of Huncútstvo" },
+  { name: "Matvii Rtveliashvili", role: "Director of Administration" },
+  { name: "Maxim Matovcik", role: "Director of Finance" },
+  { name: "Sophia Anna Hozlárová", role: "Director of Information Technology" },
+  { name: "Teo Petrisko", role: "Director of Strategic Partnerships" },
 ];
 
-const chairs = [
-  { c: "IMF", name: "Lukáš Polák" },
-  { c: "WTO", name: "Elena Marković" },
-  { c: "OECD", name: "Petra Šimonová" },
-  { c: "G20", name: "David Krajči" },
-  { c: "UNCTAD", name: "Nina Beneš" },
-  { c: "ECOFIN", name: "Tomáš Varga" },
-];
+function initials(name: string) {
+  return name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((n) => n[0])
+    .join("")
+    .toUpperCase();
+}
 
 function SecretariatPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Secretariat"
-        title="The team behind MGES 2026."
-        intro="MGES is run entirely by students. The secretariat sets the academic standard; the chairs run the rooms."
+        eyebrow="Directorate"
+        title="The Organizers of MGES 2026."
+        intro="MGES is run entirely by students. Meet the directorate shaping the Fall 2026 edition."
       />
 
-      <section className="container-prose py-20">
-        <div className="eyebrow">Executive board</div>
-        <div className="mt-8 grid md:grid-cols-3 gap-px bg-border">
-          {board.map((p) => (
-            <div key={p.name} className="bg-background p-8">
-              <div className="aspect-[4/5] bg-gradient-to-br from-graphite to-ink rounded-sm flex items-end p-5">
-                <div className="font-display text-5xl text-bone/30">
-                  {p.name.split(" ").map((n) => n[0]).join("")}
-                </div>
+      <section className="container-prose py-20 md:py-28">
+        <div className="eyebrow">2026 Organizers</div>
+        <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-mges-gold">
+          The Directorate.
+        </h2>
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-12">
+          {organizers.map((p) => (
+            <div key={p.name} className="flex flex-col items-center text-center">
+              <div className="relative h-32 w-32 md:h-40 md:w-40 rounded-full overflow-hidden border-2 border-mges-gold/40 bg-mges-navy flex items-center justify-center">
+                <span className="font-display text-3xl md:text-4xl font-bold text-mges-gold/70">
+                  {initials(p.name)}
+                </span>
               </div>
-              <div className="mt-5 eyebrow">{p.role}</div>
-              <div className="mt-2 font-display text-xl font-medium">{p.name}</div>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.bio}</p>
+              <div className="mt-5 font-display text-lg md:text-xl font-bold text-mges-gold leading-tight">
+                {p.name}
+              </div>
+              <div className="mt-1 text-xs md:text-sm font-mono uppercase tracking-[0.18em] text-mges-beige/70">
+                {p.role}
+              </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      <section className="border-t border-border bg-card">
-        <div className="container-prose py-20">
-          <div className="eyebrow">Committee chairs</div>
-          <h2 className="mt-3 font-display text-3xl md:text-4xl font-medium">
-            Six chairs. Six committees.
-          </h2>
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
-            {chairs.map((c) => (
-              <div
-                key={c.c}
-                className="bg-background p-6 flex items-baseline justify-between gap-4"
-              >
-                <div>
-                  <div className="font-display text-xl font-medium">{c.name}</div>
-                  <div className="text-xs font-mono uppercase tracking-[0.15em] text-muted-foreground mt-1">
-                    Chair · {c.c}
-                  </div>
-                </div>
-                <div className="font-display text-3xl text-emerald-accent">{c.c}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
     </>

@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SponsorsRouteImport } from './routes/sponsors'
 import { Route as SecretariatRouteImport } from './routes/secretariat'
 import { Route as ScheduleRouteImport } from './routes/schedule'
 import { Route as GalleryRouteImport } from './routes/gallery'
@@ -19,11 +18,6 @@ import { Route as CommitteesRouteImport } from './routes/committees'
 import { Route as ApplyRouteImport } from './routes/apply'
 import { Route as IndexRouteImport } from './routes/index'
 
-const SponsorsRoute = SponsorsRouteImport.update({
-  id: '/sponsors',
-  path: '/sponsors',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SecretariatRoute = SecretariatRouteImport.update({
   id: '/secretariat',
   path: '/secretariat',
@@ -74,7 +68,6 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/schedule': typeof ScheduleRoute
   '/secretariat': typeof SecretariatRoute
-  '/sponsors': typeof SponsorsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -85,7 +78,6 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/schedule': typeof ScheduleRoute
   '/secretariat': typeof SecretariatRoute
-  '/sponsors': typeof SponsorsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -97,7 +89,6 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/schedule': typeof ScheduleRoute
   '/secretariat': typeof SecretariatRoute
-  '/sponsors': typeof SponsorsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -110,7 +101,6 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/schedule'
     | '/secretariat'
-    | '/sponsors'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -121,7 +111,6 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/schedule'
     | '/secretariat'
-    | '/sponsors'
   id:
     | '__root__'
     | '/'
@@ -132,7 +121,6 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/schedule'
     | '/secretariat'
-    | '/sponsors'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -144,18 +132,10 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   ScheduleRoute: typeof ScheduleRoute
   SecretariatRoute: typeof SecretariatRoute
-  SponsorsRoute: typeof SponsorsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sponsors': {
-      id: '/sponsors'
-      path: '/sponsors'
-      fullPath: '/sponsors'
-      preLoaderRoute: typeof SponsorsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/secretariat': {
       id: '/secretariat'
       path: '/secretariat'
@@ -224,7 +204,6 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   ScheduleRoute: ScheduleRoute,
   SecretariatRoute: SecretariatRoute,
-  SponsorsRoute: SponsorsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
