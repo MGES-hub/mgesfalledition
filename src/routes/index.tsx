@@ -63,13 +63,15 @@ function Home() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Link
-              to="/apply"
+            <a
+              href="https://mymun.com/conferences/mges-fall-edition-2026/apply"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-[15px] bg-mges-royal border-2 border-mges-gold px-6 py-3.5 text-sm font-semibold text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
             >
               Apply for Fall Edition 2026
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </a>
             <Link
               to="/committees"
               className="inline-flex items-center gap-2 rounded-[15px] border border-mges-gold/40 px-6 py-3.5 text-sm font-medium text-mges-beige hover:bg-mges-gold/10 transition-colors"
@@ -101,13 +103,15 @@ function Home() {
             </h2>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link
-              to="/apply"
+            <a
+              href="https://mymun.com/conferences/mges-fall-edition-2026/apply"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-[15px] bg-mges-royal border-2 border-mges-gold px-5 py-3 text-sm font-semibold text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
             >
               Secure your seat
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </a>
             <Link
               to="/schedule"
               className="inline-flex items-center gap-2 rounded-[15px] border border-mges-gold/50 px-5 py-3 text-sm font-medium text-mges-beige hover:bg-mges-gold/10 transition-colors"

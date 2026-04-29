@@ -146,12 +146,14 @@ function CommitteesPage() {
                 >
                   View Members
                 </button>
-                <Link
-                  to="/apply"
+                <a
+                  href="https://mymun.com/conferences/mges-fall-edition-2026/apply"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-[15px] border border-mges-gold/40 px-5 py-2.5 text-sm font-medium text-mges-beige hover:bg-mges-gold/10 transition-colors"
                 >
                   Apply for seat <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </div>
             </article>
           ))}

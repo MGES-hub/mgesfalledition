@@ -44,12 +44,14 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden lg:block">
-          <Link
-            to="/apply"
-          className="inline-flex items-center gap-2 rounded-[15px] bg-mges-royal border-2 border-mges-gold px-5 py-2.5 text-sm font-semibold text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
+          <a
+            href="https://mymun.com/conferences/mges-fall-edition-2026/apply"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-[15px] bg-mges-royal border-2 border-mges-gold px-5 py-2.5 text-sm font-semibold text-mges-beige hover:bg-mges-gold hover:text-mges-navy transition-colors"
           >
             Apply
-          </Link>
+          </a>
         </div>
 
         <button
@@ -80,13 +82,15 @@ export function SiteHeader() {
               {l.label}
             </Link>
           ))}
-          <Link
-            to="/apply"
+          <a
+            href="https://mymun.com/conferences/mges-fall-edition-2026/apply"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="mt-3 inline-flex items-center justify-center gap-2 rounded-[15px] bg-mges-royal border-2 border-mges-gold px-4 py-3 text-sm font-semibold text-mges-beige"
           >
             Apply as Delegate
-          </Link>
+          </a>
         </nav>
       </div>
     </header>
