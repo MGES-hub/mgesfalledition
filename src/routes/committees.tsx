@@ -111,7 +111,7 @@ function CommitteesPage() {
                   width={96}
                   height={96}
                   loading="lazy"
-                  className="h-24 w-24 md:h-28 md:w-28 object-contain shrink-0"
+                  className="h-24 w-24 md:h-28 md:w-28 object-cover rounded-full bg-mges-beige/5 shrink-0"
                 />
                 <div className="min-w-0">
                   <div className="font-display text-3xl md:text-4xl font-bold leading-tight text-mges-gold">
@@ -181,7 +181,7 @@ function CommitteesPage() {
               <X className="h-5 w-5" />
             </button>
             <div className="flex items-center gap-4">
-              <img src={open.logo} alt="" className="h-14 w-14 object-contain" />
+              <img src={open.logo} alt="" className="h-14 w-14 object-cover rounded-full bg-mges-beige/5" />
               <div>
                 <div className="eyebrow">Members</div>
                 <h2 id="members-title" className="font-display text-2xl md:text-3xl font-bold text-mges-gold leading-tight">
