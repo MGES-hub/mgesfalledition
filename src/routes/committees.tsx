@@ -60,6 +60,7 @@ const committees: Committee[] = [
     logo: wtoLogo,
     difficulty: "Beginner",
     size: 16,
+    chairs: "Michal Petráš & Jakub Klabnik",
     description:
       "Delegates will examine the framework of Special and Differential Treatment (SDT) and its role in supporting developing economies. The committee will debate how SDT provisions can be reformed to ensure fairness and accountability while balancing free trade principles.",
     members: [...committeeOptions[2].members],

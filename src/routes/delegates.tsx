@@ -151,7 +151,7 @@ function DelegatesPage() {
           </p>
           <div className="mt-10 flex justify-center">
             <a
-              href="https://www.mymun.com"
+              href="https://mymun.com/conferences/mges-fall-edition-2026/apply"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 rounded-[15px] bg-mges-gold px-8 py-4 text-base font-semibold text-mges-navy hover:bg-mges-beige transition-colors shadow-lg"
