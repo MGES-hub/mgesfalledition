@@ -12,7 +12,6 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SecretariatRouteImport } from './routes/secretariat'
 import { Route as ScheduleRouteImport } from './routes/schedule'
 import { Route as DelegatesRouteImport } from './routes/delegates'
-import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CommitteesRouteImport } from './routes/committees'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -31,11 +30,6 @@ const DelegatesRoute = DelegatesRouteImport.update({
   path: '/delegates',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CommitteesRoute = CommitteesRouteImport.update({
   id: '/committees',
   path: '/committees',
@@ -50,7 +44,6 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/committees': typeof CommitteesRoute
-  '/contact': typeof ContactRoute
   '/delegates': typeof DelegatesRoute
   '/schedule': typeof ScheduleRoute
   '/secretariat': typeof SecretariatRoute
@@ -58,7 +51,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/committees': typeof CommitteesRoute
-  '/contact': typeof ContactRoute
   '/delegates': typeof DelegatesRoute
   '/schedule': typeof ScheduleRoute
   '/secretariat': typeof SecretariatRoute
@@ -67,33 +59,19 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/committees': typeof CommitteesRoute
-  '/contact': typeof ContactRoute
   '/delegates': typeof DelegatesRoute
   '/schedule': typeof ScheduleRoute
   '/secretariat': typeof SecretariatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/committees'
-    | '/contact'
-    | '/delegates'
-    | '/schedule'
-    | '/secretariat'
+  fullPaths: '/' | '/committees' | '/delegates' | '/schedule' | '/secretariat'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/committees'
-    | '/contact'
-    | '/delegates'
-    | '/schedule'
-    | '/secretariat'
+  to: '/' | '/committees' | '/delegates' | '/schedule' | '/secretariat'
   id:
     | '__root__'
     | '/'
     | '/committees'
-    | '/contact'
     | '/delegates'
     | '/schedule'
     | '/secretariat'
@@ -102,7 +80,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CommitteesRoute: typeof CommitteesRoute
-  ContactRoute: typeof ContactRoute
   DelegatesRoute: typeof DelegatesRoute
   ScheduleRoute: typeof ScheduleRoute
   SecretariatRoute: typeof SecretariatRoute
@@ -131,13 +108,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DelegatesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/committees': {
       id: '/committees'
       path: '/committees'
@@ -158,7 +128,6 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CommitteesRoute: CommitteesRoute,
-  ContactRoute: ContactRoute,
   DelegatesRoute: DelegatesRoute,
   ScheduleRoute: ScheduleRoute,
   SecretariatRoute: SecretariatRoute,
