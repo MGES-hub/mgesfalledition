@@ -63,20 +63,8 @@ function ContactPage() {
         <aside className="lg:col-span-4 space-y-8">
           <div>
             <div className="eyebrow">General</div>
-            <a href="mailto:info@mges.sk" className="mt-2 flex items-center gap-3 hover:text-emerald-accent">
-              <Mail className="h-4 w-4" /> info@mges.sk
-            </a>
-          </div>
-          <div>
-            <div className="eyebrow">Partnerships</div>
-            <a href="mailto:partners@mges.sk" className="mt-2 flex items-center gap-3 hover:text-emerald-accent">
-              <Mail className="h-4 w-4" /> partners@mges.sk
-            </a>
-          </div>
-          <div>
-            <div className="eyebrow">Press</div>
-            <a href="mailto:press@mges.sk" className="mt-2 flex items-center gap-3 hover:text-emerald-accent">
-              <Mail className="h-4 w-4" /> press@mges.sk
+            <a href="mailto:mges.organizers@gmail.com" className="mt-2 flex items-center gap-3 hover:text-mges-gold transition-colors">
+              <Mail className="h-4 w-4" /> mges.organizers@gmail.com
             </a>
           </div>
           <div>
