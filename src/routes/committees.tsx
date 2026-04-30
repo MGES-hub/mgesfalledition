@@ -38,7 +38,7 @@ const committees: Committee[] = [
     logo: fomcLogo,
     difficulty: "Expert",
     size: 12,
-    chairs: "Samuel Vojtech Remenár",
+    chairs: "Samuel Vojtech Remenár & Samuel Slivák",
     description:
       "Delegates will dive into a 'what if' scenario where Zohran K. Mamdani becomes the new President of the USA, while Elon Musk holds the absolute majority in both the Senate and the House of Representatives. Central bankers must find a consensus between the President and the Technocratic Party.",
     members: [...committeeOptions[0].members],
