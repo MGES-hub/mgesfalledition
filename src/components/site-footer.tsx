@@ -39,15 +39,16 @@ export function SiteFooter() {
             <li>Bratislava, Slovakia</li>
             <li><a href="https://mymun.com/conferences/mges-fall-edition-2026/apply" target="_blank" rel="noopener noreferrer" className="text-mges-gold hover:underline">Apply now →</a></li>
           </ul>
-          <div className="mt-4 flex items-center gap-3">
+          <div className="mt-4">
             <a
-              href="https://www.instagram.com/mgesummit/"
+              href="https://www.instagram.com/mgesummit?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="MGES on Instagram"
-              className="p-2 border border-mges-gold/30 rounded-sm text-mges-beige/70 hover:text-mges-gold hover:border-mges-gold transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-mges-beige/70 hover:text-mges-gold transition-colors"
             >
               <Instagram className="h-4 w-4" />
+              <span>mgesummit</span>
             </a>
           </div>
         </div>
