@@ -18,7 +18,7 @@ export function SiteFooter() {
           </div>
           <p className="mt-6 max-w-md text-sm text-mges-beige/65 leading-relaxed">
             A three-day student simulation of international economic institutions. Convened by
-            students, for students aged 14–22 — with the rigour the subject deserves.
+            students, for students aged 14–21 — with the rigour the subject deserves.
           </p>
         </div>
 
