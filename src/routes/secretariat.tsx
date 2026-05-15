@@ -5,9 +5,9 @@ export const Route = createFileRoute("/secretariat")({
   head: () => ({
     meta: [
       { title: "Secretariat — MGES 2026" },
-      { name: "description", content: "Meet the 2026 MGES Directorate — the organizers running the Model Global Economic Summit." },
-      { property: "og:title", content: "MGES 2026 Directorate" },
-      { property: "og:description", content: "The student-led directorate behind MGES Fall 2026." },
+      { name: "description", content: "Meet the 2026 MGES Secretariat — the organizers running the Model Global Economic Summit." },
+      { property: "og:title", content: "MGES 2026 Secretariat" },
+      { property: "og:description", content: "The student-led secretariat behind MGES Fall 2026." },
     ],
   }),
   component: SecretariatPage,
@@ -40,7 +40,7 @@ function SecretariatPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Directorate"
+        eyebrow="Secretariat"
         title="The Organizers of MGES 2026."
         intro="MGES is run entirely by students. Meet the directorate shaping the Fall 2026 edition."
       />
@@ -48,7 +48,7 @@ function SecretariatPage() {
       <section className="container-prose py-20 md:py-28">
         <div className="eyebrow">2026 Organizers</div>
         <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold text-mges-gold">
-          The Directorate.
+          The Secretariat.
         </h2>
         <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-10 md:gap-12">
           {organizers.map((p) => (
