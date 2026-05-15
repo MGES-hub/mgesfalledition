@@ -14,7 +14,7 @@ export const Route = createFileRoute("/secretariat")({
 });
 
 const organizers = [
-  { name: "Vladimír Brdečka", role: "Director-General" },
+  { name: "Vladimír Brdečka", role: "Secretary-General" },
   { name: "Barbora Majerská", role: "USG for Communication" },
   { name: "Daniel Isteník", role: "USG for Design" },
   { name: "Lucia Brdečková", role: "USG for Pages" },
