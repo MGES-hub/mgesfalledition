@@ -15,14 +15,14 @@ export const Route = createFileRoute("/secretariat")({
 
 const organizers = [
   { name: "Vladimír Brdečka", role: "Director-General" },
-  { name: "Barbora Majerská", role: "Director of Communication" },
-  { name: "Daniel Isteník", role: "Director of Design" },
-  { name: "Lucia Brdečková", role: "Director of Pages" },
-  { name: "Martin Kníž", role: "Director of Marketing" },
-  { name: "Matilda Dittelova", role: "Director of Huncútstvo" },
-  { name: "Matvii Rtveliashvili", role: "Director of Administration" },
-  { name: "Maxim Matovcik", role: "Director of Finance" },
-  { name: "Sophia Anna Hozlárová", role: "Director of Information Technology" },
+  { name: "Barbora Majerská", role: "USG for Communication" },
+  { name: "Daniel Isteník", role: "USG for Design" },
+  { name: "Lucia Brdečková", role: "USG for Pages" },
+  { name: "Martin Kníž", role: "USG for Marketing" },
+  { name: "Matilda Dittelova", role: "USG for Logistics" },
+  { name: "Matvii Rtveliashvili", role: "USG for Administration" },
+  { name: "Maxim Matovcik", role: "USG for Finance" },
+  { name: "Sophia Anna Hozlárová", role: "USG for Information Technology" },
   { name: "Teo Petrisko", role: "Director of Strategic Partnerships" },
 ];
 
