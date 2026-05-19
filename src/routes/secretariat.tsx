@@ -42,7 +42,7 @@ function SecretariatPage() {
       <PageHeader
         eyebrow="Secretariat"
         title="The Organizers of MGES 2026."
-        intro="MGES is run entirely by students. Meet the directorate shaping the Fall 2026 edition."
+        intro="MGES is run entirely by students. Meet the Secretariat shaping the Fall 2026 edition."
       />
 
       <section className="container-prose py-20 md:py-28">
