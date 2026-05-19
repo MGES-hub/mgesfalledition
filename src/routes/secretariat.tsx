@@ -23,7 +23,6 @@ const organizers = [
   { name: "Matvii Rtveliashvili", role: "USG for Administration" },
   { name: "Maxim Matovcik", role: "USG for Finance" },
   { name: "Sophia Anna Hozlárová", role: "USG for Information Technology" },
-  { name: "Teo Petrisko", role: "Director of Strategic Partnerships" },
 ];
 
 function initials(name: string) {
