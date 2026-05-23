@@ -59,9 +59,9 @@
   --mges-navy: #051626;        /* primary background */
   --mges-charcoal: #051626;    /* unified — use primary navy everywhere */
   --mges-steel: #051626;       /* unified — use primary navy everywhere */
-  --mges-royal: #16265A;       /* buttons / interactive */
-  --mges-gold: #C69E56;        /* headings, highlights */
-  --mges-beige: #E0D5BD;       /* body text, UI labels */
+  --mges-royal: #0E1B45;       /* buttons / interactive */
+  --mges-gold: #C9A961;        /* headings, highlights */
+  --mges-beige: #E8DCC2;       /* body text, UI labels */
 
   --background: var(--mges-navy);
   --foreground: var(--mges-beige);
