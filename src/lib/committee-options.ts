@@ -27,7 +27,7 @@ export const committeeOptions = [
     ],
   },
   {
-    code: "HESOC",
+    code: "HECOSOC",
     name: "Historical Economic and Social Council",
     members: [
       "Boris Yeltsin (Russia)", "Fernando Collor de Mello (Brazil)", "Fidel Castro (Cuba)",
