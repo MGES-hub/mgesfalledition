@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-bg.jpg";
 import bratislavaImg from "@/assets/bratislava-panorama-home.png";
 import bricsLogo from "@/assets/committees/home/brics.png";
-import hesocLogo from "@/assets/committees/home/hesoc.png";
+import hecosocLogo from "@/assets/committees/home/hesoc.png";
 import fomcLogo from "@/assets/committees/home/fomc.png";
 import wtoLogo from "@/assets/committees/home/wto.png";
 import { SocialProofRibbon } from "@/components/social-proof-ribbon";
@@ -27,7 +27,7 @@ const committees = [
   { code: "FOMC", name: "Federal Open Market Committee", logo: fomcLogo },
   { code: "BRICS", name: "BRICS", logo: bricsLogo },
   { code: "WTO", name: "World Trade Organization", logo: wtoLogo },
-  { code: "HESOC", name: "Historical Economic & Social Council", logo: hesocLogo },
+  { code: "HECOSOC", name: "Historical Economic & Social Council", logo: hecosocLogo },
 ];
 
 function Home() {

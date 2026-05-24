@@ -5,16 +5,16 @@ import { ArrowRight, X } from "lucide-react";
 import fomcLogo from "@/assets/committees/fomc.png";
 import bricsLogo from "@/assets/committees/brics.png";
 import wtoLogo from "@/assets/committees/wto.png";
-import hesocLogo from "@/assets/committees/hesoc.png";
+import hecosocLogo from "@/assets/committees/hesoc.png";
 import { committeeOptions } from "@/lib/committee-options";
 
 export const Route = createFileRoute("/committees")({
   head: () => ({
     meta: [
       { title: "Committees — MGES 2026" },
-      { name: "description", content: "Four specialised economic committees: FOMC, BRICS, WTO, and HESOC. Choose your seat." },
+      { name: "description", content: "Four specialised economic committees: FOMC, BRICS, WTO, and HECOSOC. Choose your seat." },
       { property: "og:title", content: "MGES 2026 Committees" },
-      { property: "og:description", content: "Four committees covering global economic policy: FOMC, BRICS, WTO, HESOC." },
+      { property: "og:description", content: "Four committees covering global economic policy: FOMC, BRICS, WTO, HECOSOC." },
     ],
   }),
   component: CommitteesPage,
@@ -66,9 +66,9 @@ const committees: Committee[] = [
     members: [...committeeOptions[2].members],
   },
   {
-    code: "HESOC",
+    code: "HECOSOC",
     name: "Historical Economic and Social Council",
-    logo: hesocLogo,
+    logo: hecosocLogo,
     difficulty: "Beginner",
     size: 17,
     chairs: "Vladimír Brdečka & Olívia Jánošíková",
