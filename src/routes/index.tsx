@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero-bg.jpg";
-import bratislavaImg from "@/assets/bratislava-panorama-home.png";
+import bratislavaImg from "@/assets/bratislava-castle-blue-hour.jpg";
 import bricsLogo from "@/assets/committees/home/brics.png";
 import hecosocLogo from "@/assets/committees/home/hesoc.png";
 import fomcLogo from "@/assets/committees/home/fomc.png";
@@ -88,7 +88,7 @@ function Home() {
       <section className="relative overflow-hidden border-b border-mges-gold/15">
         <img
           src={bratislavaImg}
-          alt="Bratislava panorama at golden hour"
+          alt="Bratislava Castle at blue hour above the Danube"
           width={1920}
           height={768}
           loading="lazy"
