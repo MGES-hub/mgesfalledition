@@ -4,6 +4,7 @@ import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Toaster } from "@/components/ui/sonner";
+import { PageTransition } from "@/components/page-transition";
 
 function NotFoundComponent() {
   return (
@@ -75,7 +76,9 @@ function RootComponent() {
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
-        <Outlet />
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
       </main>
       <SiteFooter />
       <Toaster />
