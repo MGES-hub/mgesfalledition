@@ -19,7 +19,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
         return false;
       }
 
-      const target = event.target instanceof Element ? event.target : event.target?.parentElement;
+      const target = event.target instanceof Element ? event.target : null;
       const anchor = target?.closest("a[href]");
       if (!anchor || anchor.getAttribute("target") || anchor.hasAttribute("download")) return false;
 
