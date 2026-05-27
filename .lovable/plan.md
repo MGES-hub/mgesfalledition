@@ -1,19 +1,33 @@
-## Plan: New background for the Bratislava section
+## Goal
+Add smooth page transitions when navigating between routes (/, /committees, /delegates, /schedule, /secretariat), plus subtle on-scroll reveal polish so subpages feel less abrupt.
 
-Replace the existing `bratislava-panorama-home.png` background behind "Bratislava — at the heart of Central Europe" with a custom, AI-generated image of **Bratislava Castle at blue hour**, tuned to the navy + champagne palette so it integrates with the rest of the site.
+## Approach
+Use `framer-motion` (already common in the stack) for a single shared transition wrapper driven by the current route pathname.
 
-### What I'll do
+## Changes
 
-1. **Generate the image** (premium quality, 1920×768, JPG) and save it to `src/assets/bratislava-castle-blue-hour.jpg`.
-   - Prompt direction: Bratislava Castle on the hill, floodlit white walls and four corner towers, deep navy blue-hour sky with a faint warm horizon glow, Danube river in the foreground catching reflections, distant Old Town lights, wide cinematic 21:9 framing, photorealistic, premium editorial photography, no text or logos.
-   - The composition is right-weighted so the left side stays clean — the existing left-to-right navy gradient overlay continues to keep the headline readable.
+1. **Install dependency**
+   - `bun add framer-motion`
 
-2. **Wire it into `src/routes/index.tsx`** — swap the `bratislavaImg` import to the new file and update the `alt` text to "Bratislava Castle at blue hour above the Danube". No layout, gradient, or copy changes.
+2. **New component `src/components/page-transition.tsx`**
+   - Wraps `children` in `AnimatePresence mode="wait"`.
+   - Uses `useRouterState()` to get current `location.pathname` as the motion key.
+   - Animation: fade + 8px upward slide, ~280ms, easeOut. Exit: fade out ~180ms.
+   - Respects `prefers-reduced-motion` (skips transform, keeps instant fade).
 
-3. **Delete the old** `src/assets/bratislava-panorama-home.png` once the swap is in place, since it's only used in that one spot.
+3. **`src/routes/__root.tsx`**
+   - Wrap `<Outlet />` inside `<main>` with `<PageTransition>`.
+   - Also scroll to top on route change (small effect inside the wrapper) so long subpages don't open mid-scroll.
 
-### Technical notes
+4. **Optional polish (light touch, no per-route refactor)**
+   - Add a global CSS rule in `src/styles.css` for `html { scroll-behavior: smooth }` so in-page hash links also feel smoother.
 
-- Single asset import; surgical edit to one route file.
-- Existing overlay (`bg-gradient-to-r from-mges-navy/95 via-mges-navy/75 to-mges-navy/40`) is preserved, so contrast on the headline and CTAs is unchanged.
-- If you'd rather review the generated image before I commit to it, say the word and I'll generate it first and show it before swapping.
+## Out of scope
+- No per-section scroll-reveal animations on every subpage (would require touching each route). Can be added later if desired.
+- No changes to header/footer.
+
+## Files touched
+- `package.json` (via bun add)
+- `src/components/page-transition.tsx` (new)
+- `src/routes/__root.tsx` (wrap Outlet)
+- `src/styles.css` (one line)
