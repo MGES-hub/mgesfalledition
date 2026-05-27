@@ -14,12 +14,13 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const shouldCoverNavigation = (event: MouseEvent | PointerEvent) => {
+    const shouldCoverNavigation = (event: MouseEvent) => {
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.defaultPrevented) {
         return false;
       }
 
-      const anchor = (event.target as Element | null)?.closest("a[href]");
+      const target = event.target instanceof Element ? event.target : event.target?.parentElement;
+      const anchor = target?.closest("a[href]");
       if (!anchor || anchor.getAttribute("target") || anchor.hasAttribute("download")) return false;
 
       const nextUrl = new URL(anchor.getAttribute("href") ?? "", window.location.href);
@@ -31,11 +32,10 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
       );
     };
 
-    const startCover = (event: MouseEvent | PointerEvent) => {
+    const startCover = (event: MouseEvent) => {
       if (shouldCoverNavigation(event)) setIsCovering(true);
     };
 
-    window.addEventListener("pointerdown", startCover, { capture: true });
     window.addEventListener("click", startCover, { capture: true });
 
     const unsubscribeBeforeNavigate = router.subscribe("onBeforeNavigate", (event) => {
@@ -47,7 +47,6 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
     });
 
     return () => {
-      window.removeEventListener("pointerdown", startCover, { capture: true });
       window.removeEventListener("click", startCover, { capture: true });
       unsubscribeBeforeNavigate();
       unsubscribeResolved();
