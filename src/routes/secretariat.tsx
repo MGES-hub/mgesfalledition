@@ -20,7 +20,6 @@ const organizers = [
   { name: "Lucia Brdečková", role: "USG for Pages" },
   { name: "Martin Kníž", role: "USG for Marketing" },
   { name: "Matilda Dittelová", role: "USG for Logistics" },
-  { name: "Matvii Rtveliashvili", role: "USG for Administration" },
   { name: "Maxim Maťovčík", role: "USG for Finance" },
   { name: "Sophia Anna Hozlárová", role: "USG for Information Technology" },
 ];
